@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+  --primary-bg: #141e30;
+  --secondary-bg: #243b55;
+  --accent-color: #fdbb2d;
+  --text-color: #ffffff;
+  --section-bg: rgba(255, 255, 255, 0.1);
+  --border-radius: 8px;
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+}
+
+header, footer {
+  text-align: center;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+}
+
+/* Container for main content and sidebar */
+.container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
+/* Main content styling */
+#main-content {
+  flex: 3;
+}
+
+/* Sidebar styling (subtle side panel) */
+#sidebar {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  font-size: 0.9rem;
+}
+
+/* Section styling for both main and sidebar sections */
+section {
+  background: var(--section-bg);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  backdrop-filter: blur(5px);
+}
+
+h2 {
+  margin-bottom: 10px;
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+ul {
+  list-style: none;
+  margin-top: 10px;
+}
+
+li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+footer p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Responsive layout: stack main content and sidebar on smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
