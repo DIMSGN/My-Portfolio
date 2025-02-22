@@ -21,7 +21,9 @@ body {
   background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
   color: var(--text-color);
   line-height: 1.6;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header, footer {
@@ -43,9 +45,12 @@ header p {
 /* Container for main content and sidebar */
 .container {
   display: flex;
+  flex: 1;
   gap: 20px;
   align-items: flex-start;
-  margin: 20px 0;
+  margin: 20px auto;
+  padding: 0 20px;
+  max-width: 1200px;
 }
 
 /* Main content styling */
@@ -61,6 +66,8 @@ header p {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   font-size: 0.9rem;
+  position: sticky;
+  top: 20px;
 }
 
 /* Section styling for both main and sidebar sections */
@@ -115,6 +122,10 @@ a:hover {
   text-decoration: underline;
 }
 
+footer {
+  margin-top: auto;
+}
+
 footer p {
   font-size: 0.9rem;
   opacity: 0.7;
@@ -124,5 +135,15 @@ footer p {
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+  }
+
+  #main-content, #sidebar {
+    flex: none;
+    width: 100%;
+  }
+
+  #sidebar {
+    position: relative;
+    top: 0;
   }
 }
