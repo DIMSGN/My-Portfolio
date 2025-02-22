@@ -18,7 +18,7 @@
 
 body {
   font-family: 'Roboto Mono', monospace;
-  background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+  background: linear-gradient(180deg, var(--primary-bg), var(--secondary-bg) 50%, var(--primary-bg));
   color: var(--text-color);
   line-height: 1.6;
   display: flex;
