@@ -80,6 +80,52 @@ section {
   backdrop-filter: blur(5px);
 }
 
+/* Web Apps section styling */
+#web-apps {
+  background: var(--section-bg);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  backdrop-filter: blur(5px);
+}
+
+#web-apps .app-card {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 20px;
+}
+
+#web-apps .app-card h3 {
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+#web-apps .app-card p {
+  margin-bottom: 10px;
+}
+
+#web-apps .app-card a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#web-apps .app-card a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+#web-apps .app-card .app-thumbnail {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 10px;
+}
+
 h2 {
   margin-bottom: 10px;
   border-bottom: 2px solid var(--accent-color);
@@ -96,6 +142,38 @@ h3 {
 ul {
   list-style: none;
   margin-top: 10px;
+}
+
+img {
+  width: 50%; /* Adjusted width for larger screens */
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 10px;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  position: relative;
+}
+
+img:hover {
+  width: 60%;
+  opacity: 0.8;
+}
+
+img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 70%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: var(--border-radius);
+}
+
+img:hover::after {
+  opacity: 1;
 }
 
 li {
@@ -145,5 +223,9 @@ footer p {
   #sidebar {
     position: relative;
     top: 0;
+  }
+
+  img {
+    width: 70%; /* Adjusted width for smaller screens */
   }
 }
