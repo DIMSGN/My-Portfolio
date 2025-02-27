@@ -124,6 +124,30 @@ section {
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   margin-bottom: 10px;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  position: relative;
+}
+
+#web-apps .app-card .app-thumbnail:hover {
+  width: 100%;
+  opacity: 0.8;
+}
+
+#web-apps .app-card .app-thumbnail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: var(--border-radius);
+}
+
+#web-apps .app-card .app-thumbnail:hover::after {
+  opacity: 1;
 }
 
 h2 {
