@@ -1,5 +1,7 @@
+/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
+/* Root variables for easy theme management */
 :root {
   --primary-bg: #141e30;
   --secondary-bg: #243b55;
@@ -10,6 +12,7 @@
   --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -42,6 +45,7 @@ header p {
   color: var(--accent-color);
 }
 
+/* Main container layout */
 .container {
   display: flex;
   flex: 1;
@@ -62,7 +66,6 @@ header p {
   padding: 15px;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  font-size: 0.9rem;
   position: sticky;
   top: 20px;
 }
@@ -127,72 +130,7 @@ footer p {
   opacity: 0.7;
 }
 
-#web-apps .app-card {
-  background: rgba(0, 0, 0, 0.2);
-  padding: 15px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  margin-bottom: 20px;
-}
-
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
-
-:root {
-  --primary-bg: #141e30;
-  --secondary-bg: #243b55;
-  --accent-color: #fdbb2d;
-  --text-color: #ffffff;
-  --section-bg: rgba(255, 255, 255, 0.1);
-  --border-radius: 8px;
-  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Roboto Mono', monospace;
-  background: linear-gradient(180deg, var(--primary-bg), var(--secondary-bg) 50%, var(--primary-bg));
-  color: var(--text-color);
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-header, footer {
-  text-align: center;
-  padding: 20px;
-}
-
-.container {
-  display: flex;
-  flex: 1;
-  gap: 20px;
-  align-items: flex-start;
-  margin: 20px auto;
-  padding: 0 20px;
-  max-width: 1200px;
-}
-
-#main-content {
-  flex: 3;
-}
-
-#sidebar {
-  flex: 1;
-  background: rgba(0, 0, 0, 0.2);
-  padding: 15px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  position: sticky;
-  top: 20px;
-}
-
+/* Web Apps Section */
 #web-apps .app-card {
   background: rgba(0, 0, 0, 0.2);
   padding: 15px;
@@ -200,8 +138,13 @@ header, footer {
   box-shadow: var(--box-shadow);
   margin-bottom: 20px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
+/* Thumbnail container with overlay */
 .thumbnail-container {
   position: relative;
   display: inline-block;
@@ -216,6 +159,7 @@ header, footer {
   box-shadow: var(--box-shadow);
 }
 
+/* Overlay (Initially hidden) */
 .overlay {
   position: absolute;
   top: 0;
@@ -235,6 +179,7 @@ header, footer {
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+/* Hover effect to reveal overlay */
 .thumbnail-container:hover {
   width: 60%;
 }
@@ -244,6 +189,43 @@ header, footer {
   visibility: visible;
 }
 
+.app-title {
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+  text-align: center;
+  width: 250px; /* Slightly smaller */
+  height: 60px; /* Adjusted for proportion */
+  border-radius: 50px; /* Rounded edges */
+  background: linear-gradient(180deg, #ffe70a 10%, #ffdf00 30%, #b88f09 60%, #ffb700 100%);
+  border: 4px solid #c5c5c5; /* Softer silver border */
+  box-shadow: 
+    inset 3px 3px 8px rgba(255, 255, 255, 0.8), /* Inner highlight */
+    inset -3px -3px 8px rgba(0, 0, 0, 0.4), /* Inner shadow */
+    0px 5px 8px rgba(0, 0, 0, 0.3), /* Outer shadow */
+    0px 2px 2px rgba(255, 255, 255, 0.2); /* Extra shine */
+  margin-bottom: 50px;;
+}
+
+/* Specific styling for the Inventory App title */
+.app-title h3 {
+  color: #00000086; /* Change this to your desired color */
+  font-size: 1.5rem; /* Increase the font size */
+  font-weight: 700; /* Make the font bold */
+  text-align: center; /* Center the text */
+  text-shadow: 1px 1px 2px rgba(99, 99, 99, 0.8); /* Add a text shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition effects */
+}
+
+/* Update text-shadow for .app-title h2 */
+.app-title h2 {
+  color: #f1f1f1; /* Change this to your desired color */
+  font-size: 1.5rem; /* Increase the font size */
+  font-weight: 700; /* Make the font bold */
+  text-align: center; /* Center the text */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Darker shadow at bottom right */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition effects */
+}
 
 @media (max-width: 768px) {
   .container {
@@ -262,5 +244,10 @@ header, footer {
 
   .thumbnail-container {
     width: 70%;
+  }
+
+  .thumbnail-container .overlay {
+    opacity: 1;
+    visibility: visible;
   }
 }
