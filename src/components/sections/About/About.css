@@ -1,0 +1,361 @@
+/* =================================================
+   ABOUT SECTION - Η ενότητα "Σχετικά με εμένα"
+   =================================================
+   
+   Αυτό το αρχείο στυλ περιέχει όλες τις εμφανίσεις για την About ενότητα.
+   Περιλαμβάνει:
+   - Personal Card: Κάρτα με προσωπικές πληροφορίες και avatar
+   - Tech Stack: Tags με τις τεχνολογίες που χρησιμοποιώ
+   - Stats Section: Στατιστικά με αριθμούς και εικονίδια
+   - Responsive Design: Προσαρμογή σε όλες τις οθόνες
+   ================================================= */
+
+/* ΚΥΡΙΑ ΕΝΟΤΗΤΑ ABOUT */
+.about-section {
+  padding: 2rem 0;                    /* Κενό πάνω-κάτω: 32px */
+  background: var(--bg-glass-light);  /* Διαφανές γυάλινο φόντο */
+  position: relative;                 /* Για absolute positioning των παιδιών */
+}
+
+/* CONTAINER - Περιορίζει το πλάτος και κεντράρει το περιεχόμενο */
+.container {
+  max-width: 1200px;    /* Μέγιστο πλάτος: 1200px */
+  margin: 0 auto;       /* Κεντράρισμα: 0 πάνω-κάτω, auto αριστερά-δεξιά */
+  padding: 0 2rem;      /* Εσωτερικό κενό: 0 πάνω-κάτω, 32px αριστερά-δεξιά */
+}
+
+/* HEADER ΕΝΟΤΗΤΑΣ - Τίτλος και υπότιτλος */
+.about-header {
+  text-align: center;      /* Κεντράρισμα κειμένου */
+  margin-bottom: 3rem;     /* Κενό κάτω: 48px */
+}
+
+/* ΚΥΡΙΟΣ ΤΙΤΛΟΣ με Gradient Effect */
+.about-title {
+  font-size: 3rem;                             /* Μέγεθος γραμματοσειράς: 48px */
+  font-weight: 700;                            /* Πολύ έντονη γραμματοσειρά */
+  color: var(--text-white);                    /* Λευκό χρώμα (fallback) */
+  margin-bottom: 1rem;                         /* Κενό κάτω: 16px */
+  
+  /* GRADIENT TEXT EFFECT - Το κείμενο παίρνει χρώματα από gradient */
+  background: var(--gradient-primary);         /* Μωβ-μπλε gradient ως φόντο */
+  background-clip: text;                       /* Το gradient εφαρμόζεται μόνο στο κείμενο */
+  -webkit-background-clip: text;               /* Webkit prefix για browser compatibility */
+  -webkit-text-fill-color: transparent;       /* Κάνει το κείμενο διαφανές ώστε να φαίνεται το gradient */
+}
+
+/* ΥΠΟΤΙΤΛΟΣ */
+.about-subtitle {
+  font-size: 1.125rem;     /* 18px */
+  color: var(--text-white-8);  /* Άσπρο με 80% opacity για πιο μαλακή εμφάνιση */
+  max-width: 700px;        /* Μέγιστο πλάτος για καλύτερη αναγνωσιμότητα */
+  margin: 0 auto;          /* Κεντράρισμα */
+  line-height: 1.6;        /* Ύψος γραμμής 1.6x για καλύτερη αναγνωσιμότητα */
+}
+
+/* ===========================================
+   ΠΡΟΣΩΠΙΚΟ ΠΕΡΙΕΧΟΜΕΝΟ - Personal Content
+   =========================================== */
+.about-content {
+  margin-bottom: 4rem;     /* Κενό κάτω: 64px */
+}
+
+/* ΚΑΡΤΑ ΠΡΟΣΩΠΙΚΩΝ ΠΛΗΡΟΦΟΡΙΩΝ - Η κύρια κάρτα με avatar και info */
+.personal-card {
+  background: var(--bg-glass-light);        /* Διαφανές γυάλινο φόντο */
+  border: var(--glass-border);              /* Λεπτό άσπρο περίγραμμα */
+  border-radius: 1.5rem;                   /* Στρογγυλεμένες γωνίες: 24px */
+  padding: 3rem;                           /* Εσωτερικό κενό: 48px από όλες τις πλευρές */
+  
+  /* CSS GRID LAYOUT - Δημιουργεί 2 στήλες */
+  display: grid;                           /* Ενεργοποιεί CSS Grid */
+  grid-template-columns: auto 1fr;         /* Στήλη 1: Αυτόματο μέγεθος, Στήλη 2: Υπόλοιπος χώρος */
+  gap: 3rem;                              /* Κενό μεταξύ στηλών: 48px */
+  align-items: start;                      /* Ευθυγράμμιση στην κορυφή */
+  
+  box-shadow: var(--glass-shadow);         /* Μαλακή σκιά */
+  transition: all 0.3s ease;               /* Ομαλή μετάβαση για όλες τις αλλαγές */
+}
+
+/* HOVER EFFECT - Τι γίνεται όταν περνάει το ποντίκι */
+.personal-card:hover {
+  box-shadow: var(--glass-shadow-hover);   /* Πιο έντονη σκιά */
+  border-color: rgba(147, 51, 234, 0.3);   /* Πιο έντονο περίγραμμα (αυτό θα αλλάξει σε άσπρο) */
+}
+
+/* ΤΜΗΜΑ AVATAR - Η αριστερή στήλη με το avatar και location */
+.avatar-section {
+  display: flex;              /* Flexbox layout */
+  flex-direction: column;     /* Κάθετη διάταξη (avatar πάνω, location κάτω) */
+  align-items: center;        /* Κεντράρισμα οριζόντια */
+  gap: 1rem;                 /* Κενό μεταξύ στοιχείων: 16px */
+}
+
+/* AVATAR - Ο κύκλος με τα αρχικά του ονόματος */
+.avatar {
+  width: 120px;                              /* Πλάτος: 120px */
+  height: 120px;                             /* Ύψος: 120px (τέλειος κύκλος) */
+  background: var(--gradient-primary);       /* Μωβ-μπλε gradient φόντο */
+  border-radius: 50%;                        /* 50% = τέλειος κύκλος */
+  
+  /* ΚΕΝΤΡΑΡΙΣΜΑ ΚΕΙΜΕΝΟΥ ΜΕΣΑ ΣΤΟΝ ΚΥΚΛΟ */
+  display: flex;                             /* Flexbox για κεντράρισμα */
+  align-items: center;                       /* Κεντράρισμα κάθετα */
+  justify-content: center;                   /* Κεντράρισμα οριζόντια */
+  
+  font-size: 2rem;                          /* Μέγεθος γραμματοσειράς: 32px */
+  font-weight: 700;                         /* Πολύ έντονη γραμματοσειρά */
+  color: white;                             /* Άσπρο χρώμα κειμένου */
+  
+  box-shadow: 0 8px 32px rgba(147, 51, 234, 0.3);  /* Μωβ λάμψη γύρω από το avatar */
+  border: 4px solid rgba(255, 255, 255, 0.1);      /* Λεπτό διαφανές περίγραμμα */
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-white-8);
+  font-size: 0.9rem;
+}
+
+/* Personal Info */
+.personal-info {
+  flex: 1;
+}
+
+.personal-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-white);
+  margin-bottom: 1rem;
+}
+
+.personal-description {
+  color: var(--text-white-8);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* ===============================================
+   TECH STACK - Οι τεχνολογίες που χρησιμοποιώ
+   =============================================== */
+.tech-stack {
+  margin-top: 2rem;          /* Κενό πάνω: 32px */
+}
+
+.tech-title {
+  font-size: 1rem;           /* 16px */
+  font-weight: 600;          /* Ημι-έντονη γραμματοσειρά */
+  color: rgb(202, 194, 194); /* Ανοιχτό γκρι χρώμα */
+  margin-bottom: 1rem;       /* Κενό κάτω: 16px */
+}
+
+/* CONTAINER ΓΙΑ ΤΟΥΣ TAGS */
+.tech-tags {
+  display: flex;            /* Flexbox layout */
+  flex-wrap: wrap;          /* Οι tags μπορούν να περνούν στην επόμενη γραμμή */
+  color: white;             /* Fallback χρώμα */
+  gap: 0.75rem;            /* Κενό μεταξύ tags: 12px */
+}
+
+/* ΚΑΘΕ TECH TAG - Ένας tag για κάθε τεχνολογία (React, Node.js, κλπ) */
+.tech-tag {
+  /* ΡΕΑΛΙΣΤΙΚΟ ΓΥΑΛΙΝΟ ΣΤΥΛ - Αλλαγμένο από μωβ σε άσπρο */
+  background: rgba(255, 255, 255, 0.12);      /* Διαφανές άσπρο φόντο (12% opacity) */
+  color: rgba(255, 255, 255, 0.9);            /* Σχεδόν άσπρο κείμενο (90% opacity) */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Διαφανές άσπρο περίγραμμα */
+  
+  /* ΔΙΑΣΤΑΣΕΙΣ ΚΑΙ ΣΧΗΜΑ */
+  padding: 0.5rem 1rem;      /* Εσωτερικό κενό: 8px πάνω-κάτω, 16px αριστερά-δεξιά */
+  border-radius: 1rem;       /* Στρογγυλεμένες γωνίες: 16px */
+  
+  /* ΚΕΙΜΕΝΟ */
+  font-size: 0.875rem;       /* 14px */
+  font-weight: 500;          /* Μεσαία έντονη γραμματοσειρά */
+  
+  transition: all 0.3s ease; /* Ομαλή μετάβαση για hover effects */
+}
+
+.tech-tag:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Stats Section */
+.stats-section {
+  margin-bottom: 4rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.stat-card {
+  background: var(--bg-glass-light);
+  border: var(--glass-border);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--glass-shadow);
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--glass-shadow-hover);
+  border-color: rgba(147, 51, 234, 0.4);
+}
+
+.stat-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--gradient-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 16px rgba(147, 51, 234, 0.3);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 0.5rem;
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  color: var(--text-white-8);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Values Section */
+.values-section {
+  margin-bottom: 4rem;
+}
+
+.values-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-white);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.value-card {
+  background: var(--bg-glass-light);
+  border: var(--glass-border);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--glass-shadow);
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--glass-shadow-hover);
+  border-color: rgba(147, 51, 234, 0.4);
+}
+
+.value-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--gradient-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 4px 16px rgba(147, 51, 234, 0.3);
+}
+
+.value-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-white);
+  margin-bottom: 1rem;
+}
+
+.value-description {
+  color: var(--text-white-8);
+  line-height: 1.6;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 4rem 0;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+  }
+  
+  .personal-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .avatar {
+    width: 100px;
+    height: 100px;
+    font-size: 1.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 2rem;
+  }
+  
+  .personal-card {
+    padding: 1.5rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-card,
+  .value-card {
+    padding: 1.5rem;
+  }
+}

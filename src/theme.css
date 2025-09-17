@@ -1,0 +1,376 @@
+/* ==========================================
+   ΚΕΝΤΡΙΚΟ ΣΥΣΤΗΜΑ ΘΕΜΑΤΟΣ ΓΙΑ ΤΟ PORTFOLIO
+   ==========================================
+   
+   Αυτό το αρχείο περιέχει όλες τις βασικές μεταβλητές CSS που χρησιμοποιούνται
+   σε ολόκληρο το portfolio. Είναι σαν ένα "λεξικό" χρωμάτων και στυλ που 
+   μπορούν να χρησιμοποιηθούν παντού στην εφαρμογή.
+   
+   CSS Custom Properties (--variable-name) = Μεταβλητές που μπορούν να επαναχρησιμοποιηθούν
+   :root = Το κεντρικό σημείο όπου ορίζονται οι μεταβλητές για όλη τη σελίδα
+   ========================================== */
+
+:root {
+  /* ΚΥΡΙΑ ΧΡΩΜΑΤΑ - Τα βασικά χρώματα του θέματος */
+  --primary-purple: #9333ea;      /* Κύριο μωβ χρώμα για κουμπιά και εφέ */
+  --primary-blue: #3b82f6;        /* Κύριο μπλε για gradients και αποχρώσεις */
+  --secondary-purple: #8b5cf6;    /* Δευτερεύον μωβ για ποικιλία */
+  --accent-purple: #a855f7;       /* Χρώμα τονισμού για hover εφέ */
+  
+  /* ΧΡΩΜΑΤΑ ΦΟΝΤΟΥ - Όλα τα backgrounds της εφαρμογής */
+  --bg-primary: linear-gradient(135deg, #0f0f23 0%, #1a1b3c 25%, #2d1b69 50%, #1a1b3c 75%, #0f0f23 100%);
+  /* ↑ Κύριο gradient φόντο: Ξεκινά από σκούρο μπλε, πάει σε μωβ στη μέση, επιστρέφει σε σκούρο */
+  
+  --bg-dark-overlay: rgba(15, 15, 35, 0.9);  /* Σκούρο επικάλυμμα για διαφάνεια */
+  
+  /* GLASS MORPHISM BACKGROUNDS - Διαφανή γυάλινα εφέ */
+  --bg-glass-light: rgba(255, 255, 255, 0.08);    /* Ελαφρύ γυάλινο εφέ (8% διαφάνεια) */
+  --bg-glass-medium: rgba(255, 255, 255, 0.12);   /* Μεσαίο γυάλινο εφέ (12% διαφάνεια) */
+  --bg-glass-strong: rgba(255, 255, 255, 0.16);   /* Δυνατό γυάλινο εφέ (16% διαφάνεια) */
+  --bg-glass-solid: rgba(255, 255, 255, 0.20);    /* Πιο στερεό γυάλινο εφέ (20% διαφάνεια) */
+  --bg-glass-opaque: rgba(255, 255, 255, 0.25);   /* Πιο αδιαφανές γυάλινο εφέ (25% διαφάνεια) */
+  
+  /* ΡΕΑΛΙΣΤΙΚΟ GLASS MORPHISM - Γυάλινα εφέ που μοιάζουν με αληθινό γυαλί */
+  --glass-blur: blur(20px);  /* Θολότητα 20px για το backdrop-filter (δίνει το γυάλινο εφέ) */
+  --glass-border: 1px solid rgba(255, 255, 255, 0.18);        /* Λεπτό άσπρο περίγραμμα για ρεαλιστικό γυαλί */
+  --glass-border-hover: 1px solid rgba(255, 255, 255, 0.25);  /* Πιο έντονο περίγραμμα όταν περνάει το ποντίκι */
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);             /* Μαλακή σκιά κάτω από τα γυάλινα στοιχεία */
+  --glass-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.16);      /* Πιο έντονη σκιά στο hover */
+  
+  /* ΧΡΩΜΑΤΑ ΚΕΙΜΕΝΟΥ - Όλες οι αποχρώσεις του άσπρου για διαφορετικές χρήσεις */
+  --text-primary: #ffffff;                        /* Καθαρό άσπρο για τίτλους και κύριο κείμενο */
+  --text-secondary: rgba(255, 255, 255, 0.8);     /* Άσπρο με 80% διαφάνεια για δευτερεύον κείμενο */
+  --text-muted: rgba(255, 255, 255, 0.6);         /* Άσπρο με 60% διαφάνεια για υποδείγματα και επεξηγήσεις */
+  --text-gradient: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #dbeafe 100%);  /* Gradient από άσπρο σε απαλό μπλε */
+  
+  /* GRADIENTS - Χρωματικές μεταβάσεις για εφέ και κουμπιά */
+  --gradient-primary: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+  /* ↑ Κύριο gradient: Μωβ προς μπλε σε διαγώνια κατεύθυνση 135° */
+  
+  --gradient-secondary: linear-gradient(45deg, var(--primary-purple), var(--primary-blue), var(--secondary-purple));
+  /* ↑ Δευτερεύον gradient: Τρία χρώματα σε γωνία 45° για πιο πολύπλοκα εφέ */
+  
+  --gradient-accent: linear-gradient(135deg, rgba(147, 51, 234, 0.2), rgba(59, 130, 246, 0.2));
+  /* ↑ Διαφανές gradient για backgrounds με 20% opacity */
+  
+  /* ΕΦΦΕ ΚΑΙ ΣΚΙΕΣ - Ειδικά εφέ για λάμψη και βάθος */
+  --glow-purple: 0 0 20px rgba(147, 51, 234, 0.3);  /* Μωβ λάμψη 20px με 30% διαφάνεια */
+  --glow-blue: 0 0 20px rgba(59, 130, 246, 0.3);    /* Μπλε λάμψη 20px με 30% διαφάνεια */
+  --text-shadow: 0 2px 10px rgba(147, 51, 234, 0.2); /* Σκιά κειμένου: 2px κάτω, 10px θολότητα, μωβ χρώμα */
+}
+
+/* ================================================
+   ΒΑΣΙΚΗ ΚΛΑΣΗ ΓΥΑΛΙΝΩΝ CONTAINERS - Η βάση όλων των γυάλινων στοιχείων
+   ================================================
+   
+   Αυτή η κλάση δημιουργεί το βασικό γυάλινο εφέ που χρησιμοποιείται παντού.
+   Πώς δουλεύει το Glass Morphism:
+   1. background: Διαφανές άσπρο φόντο
+   2. backdrop-filter: Θολώνει ό,τι είναι πίσω από το στοιχείο (δημιουργεί το γυάλινο εφέ)
+   3. border: Λεπτό άσπρο περίγραμμα για ρεαλισμό
+   4. box-shadow: Μαλακή σκιά που δίνει βάθος
+   ================================================ */
+.glass-base {
+  background: var(--bg-glass-light);    /* Διαφανές άσπρο φόντο (8% opacity) */
+  backdrop-filter: var(--glass-blur);   /* Θολότητα 20px - αυτό κάνει το γυάλινο εφέ! */
+  border: var(--glass-border);          /* Λεπτό άσπρο περίγραμμα */
+  border-radius: 1.5rem;               /* Στρογγυλεμένες γωνίες 24px */
+  box-shadow: var(--glass-shadow);      /* Μαλακή σκιά για βάθος */
+  position: relative;                  /* Για τα pseudo-elements (::before, ::after) */
+  transition: all 0.3s ease;           /* Ομαλή μετάβαση 0.3 δευτερόλεπτα για όλες τις αλλαγές */
+}
+
+/* ΡΕΑΛΙΣΤΙΚΕΣ ΑΝΤΑΝΑΚΛΑΣΕΙΣ ΓΥΑΛΙΟΥ - Προσομοιώνουν αληθινό γυαλί */
+
+.glass-base::before {
+  /* Η άνω λάμψη - μοιάζει με φως που χτυπάει την κορυφή του γυαλιού */
+  content: '';                          /* Κενό περιεχόμενο - χρειάζεται για να εμφανιστεί το pseudo-element */
+  position: absolute;                   /* Τοποθετείται ακριβώς πάνω από το container */
+  top: 0; left: 0; right: 0;           /* Καλύπτει όλο το πλάτος της κορυφής */
+  height: 1px;                         /* Πολύ λεπτή γραμμή */
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  /* ↑ Gradient: Διαφανές → Λευκό στη μέση → Διαφανές (90° = οριζόντια) */
+  border-radius: 1.5rem 1.5rem 0 0;    /* Στρογγυλεμένες μόνο οι άνω γωνίες */
+}
+
+.glass-base::after {
+  /* Η εσωτερική αντανάκλαση - δίνει βάθος και ρεαλισμό */
+  content: '';                          /* Κενό περιεχόμενο */
+  position: absolute;                   /* Τοποθετείται μέσα στο container */
+  top: 1px; left: 1px; right: 1px;     /* 1px μέσα από τα όρια (πάνω από το border) */
+  height: 20%;                         /* Καλύπτει το 20% του ύψους */
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+  /* ↑ Gradient από πάνω προς τα κάτω: Λευκό → Διαφανές (180° = κάθετα) */
+  border-radius: 1.4rem 1.4rem 0 0;    /* Λίγο μικρότερη ακτίνα από το container */
+  pointer-events: none;                /* Δεν επηρεάζει το mouse - "διαπερνάται" */
+}
+
+.glass-base:hover {
+  /* Τι γίνεται όταν το ποντίκι περνάει πάνω από το γυάλινο στοιχείο */
+  background: var(--bg-glass-medium);    /* Πιο έντονο φόντο (12% αντί για 8%) */
+  border: var(--glass-border-hover);     /* Πιο έντονο περίγραμμα */
+  box-shadow: var(--glass-shadow-hover); /* Πιο έντονη σκιά */
+  transform: translateY(-1px);           /* Μετακίνηση 1px προς τα πάνω (efect "ανύψωσης") */
+}
+
+/* Unified Button Styles */
+.btn-primary {
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--glow-purple);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(147, 51, 234, 0.4);
+}
+
+/* Unified Text Styles */
+.text-gradient {
+  background: var(--text-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title-glow {
+  text-shadow: var(--glow-purple);
+  filter: drop-shadow(0 4px 20px rgba(147, 51, 234, 0.4));
+}
+
+/* Utility Classes for Common Patterns */
+.bg-white-05 { background: rgba(255, 255, 255, 0.05); }
+.bg-white-1 { background: rgba(255, 255, 255, 0.1); }
+.bg-white-15 { background: rgba(255, 255, 255, 0.15); }
+.bg-white-2 { background: rgba(255, 255, 255, 0.2); }
+.bg-white-3 { background: rgba(255, 255, 255, 0.3); }
+
+.text-white { color: white; }
+.text-white-95 { color: rgba(255, 255, 255, 0.95); }
+.text-white-9 { color: rgba(255, 255, 255, 0.9); }
+.text-white-8 { color: rgba(255, 255, 255, 0.8); }
+.text-white-7 { color: rgba(255, 255, 255, 0.8); }
+.text-white-6 { color: rgba(255, 255, 255, 0.75); }
+.text-white-5 { color: rgba(255, 255, 255, 0.65); }
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rounded-lg { border-radius: 0.75rem; }
+.rounded-xl { border-radius: 1rem; }
+.rounded-2xl { border-radius: 1.5rem; }
+.rounded-full { border-radius: 50%; }
+
+.transition-all { transition: all 0.3s ease; }
+.position-absolute { position: absolute; }
+.position-relative { position: relative; }
+
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.inset-0 { inset: 0; }
+
+.section-title {
+  background: var(--gradient-secondary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: var(--glow-purple);
+  filter: drop-shadow(0 4px 20px rgba(147, 51, 234, 0.4));
+}
+
+.card-container {
+  background: var(--bg-glass-light);
+  backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--glass-shadow);
+}
+
+.card-container:hover {
+  background: var(--bg-glass-medium);
+  border: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+/* Section Scroll Button */
+.scroll-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+  margin: 2rem auto 0;
+  color: var(--text-white-7);
+  transition: all 0.3s ease;
+}
+
+.scroll-button:hover {
+  color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .scroll-button {
+    padding: 0.8rem;
+    margin: 1.5rem auto 0;
+  }
+}
+
+.button-text {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.arrow-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-5px); }
+  60% { transform: translateY(-3px); }
+}
+
+/* ======================================
+   CUSTOM SCROLLBAR STYLING
+   ====================================== */
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  padding-right: 1px;
+  width: 56px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 15, 35, 0.8);
+  border-radius: 10px;
+  border: 1px solid rgba(147, 51, 234, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.6), rgba(59, 130, 246, 0.4));
+  border-radius: 10px;
+  border: 2px solid rgba(15, 15, 35, 0.8);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.8), rgba(59, 130, 246, 0.6));
+  box-shadow: 0 0 10px rgba(147, 51, 234, 0.4);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 1), rgba(59, 130, 246, 0.8));
+}
+
+::-webkit-scrollbar-corner {
+  background: rgba(15, 15, 35, 0.8);
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(147, 51, 234, 0.6) rgba(15, 15, 35, 0.8);
+}
+
+/* Custom scrollbar for specific containers */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(147, 51, 234, 0.6) rgba(15, 15, 35, 0.8);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.5), rgba(59, 130, 246, 0.3));
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.7), rgba(59, 130, 246, 0.5));
+}
+
+/* ======================================
+   GLASS SECTION COMPONENT STYLES
+   ====================================== */
+
+.glass-section-wrapper {
+  position: relative;
+  margin: 3rem 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .glass-section-wrapper {
+    margin: 2rem 0;
+  }
+}
+
+.glass-container {
+  background: var(--bg-glass-light);
+  backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  margin: 1.5rem auto;
+  max-width: 1200px;
+  position: relative;
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .glass-container {
+    padding: 2rem;
+    border-radius: 1.25rem;
+    margin: 1.5rem auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .glass-container {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin: 1rem auto;
+  }
+}
+
+.glass-container:hover {
+  background: var(--bg-glass-medium);
+  border: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+}

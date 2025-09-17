@@ -1,0 +1,262 @@
+/* Advanced Scrolling Glass Containers with Complex Animations */
+.advanced-glass-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  perspective: 1000px;
+  transition: opacity 1.2s ease-in-out;
+}
+
+/* ================================
+   GLASS CONTAINER BASE STYLES
+   ================================ */
+
+.glass-container-advanced {
+  position: absolute;
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    0 8px 32px rgba(255, 255, 255, 0.08),
+    0 16px 64px rgba(255, 255, 255, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.12);
+  transition: all 1s ease-in-out, width 1.5s ease-in-out, height 1.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+/* ================================
+   CONTAINER TYPES
+   ================================ */
+
+.glass-morphing-sphere {
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, 
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.10) 30%,
+    rgba(255, 255, 255, 0.06) 60%,
+    rgba(255, 255, 255, 0.03) 80%,
+    transparent 100%
+  );
+  transition: width 1.8s ease-in-out, height 1.8s ease-in-out, opacity 1.2s ease-in-out;
+}
+
+.glass-floating-cube {
+  border-radius: 20px;
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.10) 100%
+  );
+  transform-origin: center center;
+  transition: width 1.8s ease-in-out, height 1.8s ease-in-out, opacity 1.2s ease-in-out;
+}
+
+.glass-geometric-prism {
+  border-radius: 30px;
+  background: conic-gradient(from 45deg,
+    rgba(255, 255, 255, 0.14) 0deg,
+    rgba(255, 255, 255, 0.09) 90deg,
+    rgba(255, 255, 255, 0.12) 180deg,
+    rgba(255, 255, 255, 0.08) 270deg,
+    rgba(255, 255, 255, 0.14) 360deg
+  );
+  transition: width 1.8s ease-in-out, height 1.8s ease-in-out, opacity 1.2s ease-in-out;
+}
+
+/* ================================
+   SIZE VARIANTS
+   ================================ */
+
+.glass-size-small {
+  width: 120px;
+  height: 120px;
+  transition: width 1.8s ease-in-out, height 1.8s ease-in-out, opacity 1.2s ease-in-out;
+}
+
+.glass-size-medium {
+  width: 180px;
+  height: 180px;
+  transition: width 1.8s ease-in-out, height 1.8s ease-in-out, opacity 1.2s ease-in-out;
+}
+
+.glass-size-large {
+  width: 250px;
+  height: 250px;
+  transition: width 1.8s ease-in-out, height 1.8s ease-in-out, opacity 1.2s ease-in-out;
+}
+
+.glass-size-extra-large {
+  width: 320px;
+  height: 320px;
+  transition: width 1.8s ease-in-out, height 1.8s ease-in-out, opacity 1.2s ease-in-out;
+}
+
+/* ================================
+   INNER EFFECTS
+   ================================ */
+
+.glass-inner-glow {
+  position: absolute;
+  inset: 10px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 40% 30%,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.06) 40%,
+    transparent 70%
+  );
+  /* Removed animation - no movement when not scrolling */
+}
+
+.glass-shimmer-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 20%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.08) 80%,
+    transparent 100%
+  );
+  background-size: 300% 300%;
+  /* Removed animation - no movement when not scrolling */
+}
+
+.glass-border-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(45deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 25%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 75%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  background-size: 400% 400%;
+  opacity: 0;
+  /* Removed animation - no movement when not scrolling */
+  mask: linear-gradient(white 0 0) content-box, linear-gradient(white 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+}
+
+/* ================================
+   PARTICLE FIELD
+   ================================ */
+
+.particle-field {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.floating-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+/* ================================
+   ALL ANIMATIONS REMOVED
+   ================================ */
+
+/* All keyframe animations removed - movement only occurs during scrolling */
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+/* Ultra-Wide and 4K+ Displays */
+@media (min-width: 2560px) {
+  .glass-size-extra-large { width: 480px; height: 480px; }
+  .glass-size-large { width: 360px; height: 360px; }
+  .glass-size-medium { width: 280px; height: 280px; }
+  .glass-size-small { width: 200px; height: 200px; }
+  
+  /* Full visibility on ultra-wide displays */
+  .advanced-glass-background {
+    opacity: 0.6;
+  }
+}
+
+/* Large Displays (1920px - 2559px) */
+@media (min-width: 1920px) and (max-width: 2559px) {
+  .glass-size-extra-large { width: 420px; height: 420px; }
+  .glass-size-large { width: 320px; height: 320px; }
+  .glass-size-medium { width: 240px; height: 240px; }
+  .glass-size-small { width: 160px; height: 160px; }
+  
+  /* Full visibility on large displays */
+  .advanced-glass-background {
+    opacity: 0.5;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .glass-size-extra-large { width: 380px; height: 380px; }
+  .glass-size-large { width: 290px; height: 290px; }
+  .glass-size-medium { width: 210px; height: 210px; }
+  .glass-size-small { width: 140px; height: 140px; }
+  
+  /* Full visibility on 1440p+ displays */
+  .advanced-glass-background {
+    opacity: 0.4;
+  }
+}
+
+/* Standard Desktop (1025px - 1439px) - Reduced visibility below 1440p */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  /* Keep default sizes: 320px, 250px, 180px, 120px */
+  .advanced-glass-background {
+    opacity: 0.3;
+  }
+}
+
+/* Tablet and Small Desktop */
+@media (max-width: 1024px) {
+  .glass-size-extra-large { width: 280px; height: 280px; }
+  .glass-size-large { width: 220px; height: 220px; }
+  .glass-size-medium { width: 160px; height: 160px; }
+  .glass-size-small { width: 110px; height: 110px; }
+  
+  /* Further reduced visibility on tablet/small desktop screens */
+  .advanced-glass-background {
+    opacity: 0.2;
+  }
+}
+
+/* Large Tablet */
+@media (max-width: 768px) {
+  .glass-size-extra-large { width: 240px; height: 240px; }
+  .glass-size-large { width: 190px; height: 190px; }
+  .glass-size-medium { width: 140px; height: 140px; }
+  .glass-size-small { width: 100px; height: 100px; }
+  
+  /* More transparent on large tablet screens */
+  .advanced-glass-background {
+    opacity: 0.1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .glass-size-extra-large { width: 180px; height: 180px; }
+  .glass-size-large { width: 140px; height: 140px; }
+  .glass-size-medium { width: 100px; height: 100px; }
+  .glass-size-small { width: 70px; height: 70px; }
+  
+  /* Nearly invisible on mobile screens */
+  .advanced-glass-background {
+    opacity: 0.04;
+  }
+}
