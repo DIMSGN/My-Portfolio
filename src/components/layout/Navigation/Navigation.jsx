@@ -106,7 +106,7 @@ const Navigation = () => {
             className="logo-container"
           >
             <div className="logo-icon">
-              <img src="/logo.svg" alt="Personal tech logo" width="100%" height="100%" />
+              <img src="logo.svg" alt="Personal tech logo" width="100%" height="100%" />
             </div>
             <div className="logo-text">Dimitris Siganos</div>
           </motion.div>
