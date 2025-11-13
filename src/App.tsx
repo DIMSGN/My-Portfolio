@@ -20,7 +20,7 @@ const App: FC = () => {
   return (
     <ErrorBoundary>
       <div className="app-background">
-        {!isMobile && <FloatingElements variant="default" density="dense" />}
+        {!isMobile && <FloatingElements variant="default" density="minimal" />}
         <Navigation
           isMobileMenuOpen={isMobileMenuOpen}
           toggleMobileMenu={toggleMobileMenu}

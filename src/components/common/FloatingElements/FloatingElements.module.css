@@ -18,7 +18,8 @@
   will-change: transform;
   pointer-events: none;
   filter: blur(0.3px);
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+  transform: translate3d(0, 0, 0);
 }
 
 .floatingElement:hover {
