@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { scrollToSelector } from '../utils/scrollUtils';
 import { NAV_ITEMS } from '@constants/index';
-import { SCROLL_CONFIG, NAVIGATION_TIMING } from '@config/constants';
+import { SCROLL_CONFIG, NAVIGATION_TIMING, INTERSECTION_OBSERVER_CONFIG } from '@config/constants';
 
 const getHeaderHeight = (): number => {
   const header = document.querySelector('header') as HTMLElement | null;
@@ -27,8 +27,8 @@ export const useNavigation = () => {
 
     const options: IntersectionObserverInit = {
       root: null,
-      rootMargin: `-${getHeaderHeight()}px 0px -50% 0px`,
-      threshold: 0.5,
+      rootMargin: `-${getHeaderHeight()}px 0px ${INTERSECTION_OBSERVER_CONFIG.ROOT_MARGIN_BOTTOM} 0px`,
+      threshold: INTERSECTION_OBSERVER_CONFIG.THRESHOLD,
     };
 
     observerRef.current = new IntersectionObserver((entries) => {

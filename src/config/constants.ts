@@ -38,3 +38,8 @@ export const SWIPE_CONFIG = {
   MIN_TOUCH_DURATION: 10,
   USER_ACTION_WINDOW: 500,
 } as const;
+
+export const INTERSECTION_OBSERVER_CONFIG = {
+  THRESHOLD: 0.5,
+  ROOT_MARGIN_BOTTOM: '-50%',
+} as const;
