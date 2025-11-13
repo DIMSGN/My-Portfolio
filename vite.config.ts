@@ -32,17 +32,21 @@ export default defineConfig({
     assetsDir: "assets",
     sourcemap: false,
 
-    // Minification settings - using esbuild (faster)
     minify: "esbuild",
-    
-    // Target modern browsers for smaller bundle
     target: "es2020",
-    
-    // CSS code splitting
     cssCodeSplit: true,
-    
-    // Minify CSS
     cssMinify: true,
+
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'icons': ['lucide-react'],
+        },
+      },
+    },
+
+    chunkSizeWarningLimit: 600,
   },
 
   // Development server configuration
