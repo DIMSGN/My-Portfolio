@@ -1,13 +1,4 @@
-/* ==========================================
-   EFFECTS UTILITIES
-   ==========================================
-   
-   Transitions, transforms, visibility, performance
-   ========================================== */
 
-/* ====================================
-   BORDER RADIUS
-   ==================================== */
 
 .rounded-sm { border-radius: var(--radius-sm); }
 .rounded-md { border-radius: var(--radius-md); }
@@ -15,17 +6,9 @@
 .rounded-xl { border-radius: var(--radius-xl); }
 .rounded-full { border-radius: var(--radius-full); }
 
-/* ====================================
-   TRANSITIONS
-   ==================================== */
-
 .transition-fast { transition: all var(--transition-fast); }
 .transition-base { transition: all var(--transition-base); }
 .transition-slow { transition: all var(--transition-slow); }
-
-/* ====================================
-   VISIBILITY
-   ==================================== */
 
 .visible { visibility: visible; }
 .invisible { visibility: hidden; }
@@ -35,20 +18,12 @@
 .opacity-50 { opacity: 0.5; }
 .opacity-100 { opacity: 1; }
 
-/* ====================================
-   Z-INDEX
-   ==================================== */
-
 .z-background { z-index: var(--z-background); }
 .z-base { z-index: var(--z-base); }
 .z-content { z-index: var(--z-content); }
 .z-header { z-index: var(--z-header); }
 .z-overlay { z-index: var(--z-overlay); }
 .z-modal { z-index: var(--z-modal); }
-
-/* ====================================
-   PERFORMANCE OPTIMIZATIONS
-   ==================================== */
 
 .gpu-accelerated {
   will-change: transform;
@@ -71,8 +46,6 @@
 .contain-strict {
   contain: strict;
 }
-
-/* Optimize hover states to prevent repaints */
 .optimize-hover {
   transition: transform 0.15s ease-out;
 }
@@ -80,29 +53,19 @@
 .optimize-hover:hover {
   transform: translateY(-1px);
 }
-
-/* Prevent layout shifts */
 .prevent-cls {
   min-height: 1px;
   min-width: 1px;
 }
-
-/* Reduce paint complexity for buttons */
 button, .btn, .scroll-button, .hero__scroll {
   contain: layout style;
   isolation: isolate;
 }
-
-/* Optimize animations to use only transform and opacity */
 @media (prefers-reduced-motion: no-preference) {
   .smooth-animation {
     transition: transform 0.2s ease-out, opacity 0.2s ease-out;
   }
 }
-
-/* ====================================
-   CUSTOM SCROLLBAR
-   ==================================== */
 
 .custom-scrollbar {
   scrollbar-width: thin;

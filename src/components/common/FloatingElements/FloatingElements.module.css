@@ -1,8 +1,4 @@
-/* ==========================================
-   FLOATING ELEMENTS - CSS MODULE
-   ==========================================
-   Positioned to cover full viewport as background decoration
-   ========================================== */
+
 
 .floatingElements {
   position: fixed;
@@ -29,8 +25,6 @@
   opacity: 0.8;
   filter: blur(0px);
 }
-
-/* Hero-style positioning: Left and right of content, covering full viewport height */
 .floatingElement1 { 
   top: 10%; 
   left: 8%;
@@ -60,8 +54,6 @@
   top: 35%; 
   right: 8%;
 }
-
-/* Additional elements for higher density */
 .floatingElement7 {
   top: 55%;
   left: 5%;
@@ -76,8 +68,6 @@
   top: 95%;
   left: 85%;
 }
-
-/* Variant styles - different colors for different section themes */
 .tech .floatingElement {
   color: rgba(59, 130, 246, 0.3);
   opacity: 0.5;
@@ -97,8 +87,6 @@
   color: rgba(147, 51, 234, 0.3);
   opacity: 0.6;
 }
-
-/* Density variations */
 .minimal .floatingElement {
   opacity: 0.3;
 }
@@ -107,10 +95,6 @@
   opacity: 0.7;
   filter: blur(0.3px);
 }
-
-
-
-/* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   .floatingElement {
     animation: none !important;

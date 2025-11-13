@@ -1,36 +1,13 @@
-/* ==========================================
-   BUTTON COMPONENTS
-   ==========================================
-   
-   Επαναχρησιμοποιήσιμα button styles
-   Χρησιμοποιούνται σε όλο το portfolio
-   
-   Variants:
-   - .btn-primary: Κύριο CTA button
-   - .btn-secondary: Δευτερεύον button
-   - .btn-outline: Με περίγραμμα
-   - .btn-ghost: Διάφανο
-   
-   Sizes:
-   - .btn-sm: Μικρό (32px height)
-   - .btn-md: Μεσαίο (40px height)
-   - .btn-lg: Μεγάλο (48px height)
-   
-   ========================================== */
 
-/* ====================================
-   BASE BUTTON
-   Βασικό button με κοινά styles
-   ==================================== */
 
 .btn {
-  /* Layout */
+  
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
   
-  /* Typography */
+  
   font-family: inherit;
   font-weight: var(--font-weight-semibold);
   font-size: var(--text-base);
@@ -38,16 +15,16 @@
   text-decoration: none;
   white-space: nowrap;
   
-  /* Appearance */
+  
   border: none;
   border-radius: var(--radius-lg);
   cursor: pointer;
   user-select: none;
   
-  /* Animation */
+  
   transition: all var(--transition-base);
   
-  /* Accessibility - focus visible */
+  
   outline: none;
 }
 
@@ -62,12 +39,6 @@
   pointer-events: none;
 }
 
-/* ====================================
-   BUTTON VARIANTS
-   Διαφορετικά στυλ κουμπιών
-   ==================================== */
-
-/* Primary Button - Κύριο CTA */
 .btn-primary {
   background: var(--gradient-primary);
   color: white;
@@ -84,8 +55,6 @@
   transform: translateY(0);
   box-shadow: 0 2px 8px rgba(147, 51, 234, 0.3);
 }
-
-/* Secondary Button - Glass effect */
 .btn-secondary {
   background: var(--bg-glass-light);
   backdrop-filter: var(--glass-blur-light);
@@ -104,8 +73,6 @@
 .btn-secondary:active:not(:disabled) {
   transform: translateY(0);
 }
-
-/* Outline Button - Με περίγραμμα */
 .btn-outline {
   background: transparent;
   border: 2px solid var(--primary-purple);
@@ -118,8 +85,6 @@
   color: var(--secondary-purple);
   transform: translateY(-2px);
 }
-
-/* Ghost Button - Διάφανο */
 .btn-ghost {
   background: transparent;
   border: 1px solid transparent;
@@ -131,49 +96,29 @@
   color: var(--text-primary);
 }
 
-/* ====================================
-   BUTTON SIZES
-   Μεγέθη κουμπιών
-   ==================================== */
-
-/* Small Button - 32px height */
 .btn-sm {
   padding: var(--space-2) var(--space-4);
   font-size: var(--text-sm);
   min-height: 2rem;
 }
-
-/* Medium Button - 40px height (default) */
 .btn-md {
   padding: var(--space-3) var(--space-6);
   font-size: var(--text-base);
   min-height: 2.5rem;
 }
-
-/* Large Button - 48px height */
 .btn-lg {
   padding: var(--space-4) var(--space-8);
   font-size: var(--text-lg);
   min-height: 3rem;
 }
 
-/* ====================================
-   BUTTON MODIFIERS
-   Πρόσθετες παραλλαγές
-   ==================================== */
-
-/* Full width button */
 .btn-full {
   width: 100%;
 }
-
-/* Icon only button */
 .btn-icon {
   padding: var(--space-3);
   aspect-ratio: 1;
 }
-
-/* Button with loading state */
 .btn-loading {
   position: relative;
   color: transparent;
@@ -195,15 +140,10 @@
   animation: spin 0.6s linear infinite;
 }
 
-/* ====================================
-   RESPONSIVE
-   Mobile optimization
-   ==================================== */
-
 @media (max-width: 48em) {
-  /* Μεγαλύτερα touch targets στο mobile */
+  
   .btn {
-    min-height: 44px; /* iOS touch target minimum */
+    min-height: 44px; 
   }
   
   .btn-sm {

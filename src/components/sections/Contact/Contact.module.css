@@ -1,10 +1,4 @@
-/* ==========================================
-   CONTACT.MODULE.CSS - Contact Section
-   ==========================================
-   
-   UNIQUE STYLES ONLY
-   Lines: ~85 (UNDER 100 LINE LIMIT ✓)
-   ========================================== */
+
 
 .section {
   padding: var(--space-2xl) 0;
@@ -41,10 +35,6 @@
   margin: 0 auto;
   line-height: var(--line-height-relaxed);
 }
-
-/* ====================================
-   CONTACT CARDS GRID
-   ==================================== */
 
 .cards {
   display: grid;
@@ -112,11 +102,6 @@
   font-size: var(--font-size-base);
 }
 
-/* ====================================
-   MAIN CTA SECTION - RESPONSIVE
-   Mobile-first με 1 column default
-   ==================================== */
-
 .cta {
   display: grid;
   grid-template-columns: 1fr;
@@ -141,8 +126,6 @@
   margin-bottom: var(--space-lg);
   font-size: var(--font-size-base);
 }
-
-/* Services List - UNIQUE */
 .servicesList {
   margin-bottom: var(--space-xl);
 }
@@ -170,15 +153,11 @@
   gap: var(--space-md);
   flex-wrap: wrap;
 }
-
-/* Contact Info */
 .contactInfo {
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
 }
-
-/* Availability Section */
 .availability {
   background: var(--bg-glass-light);
   backdrop-filter: var(--glass-blur);
@@ -257,8 +236,6 @@
   display: flex;
   gap: var(--space-md);
 }
-
-/* Response Card */
 .responseCard {
   background: var(--bg-glass-light);
   backdrop-filter: var(--glass-blur);

@@ -1,53 +1,26 @@
-/* ==========================================
-   CARD COMPONENTS
-   ==========================================
-   
-   Επαναχρησιμοποιήσιμα glass card styles
-   Χρησιμοποιούνται σε όλες τις sections
-   
-   Base:
-   - .glass-card: Βασικό glass morphism card
-   
-   Variants:
-   - .glass-card-hover: Με hover animation
-   - .glass-card-interactive: Clickable card
-   - .glass-card-bordered: Με έντονο border
-   
-   Sizes:
-   - .glass-card-sm: Μικρό padding
-   - .glass-card-md: Μεσαίο padding (default)
-   - .glass-card-lg: Μεγάλο padding
-   
-   ========================================== */
 
-/* ====================================
-   BASE GLASS CARD
-   Βασικό card component με glass effect
-   ==================================== */
 
 .glass-card {
-  /* Background με glass morphism */
+  
   background: var(--bg-glass-light);
   backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur); /* Safari support */
+  -webkit-backdrop-filter: var(--glass-blur); 
   
-  /* Border */
+  
   border: var(--glass-border);
   border-radius: var(--radius-2xl);
   
-  /* Shadow για depth */
+  
   box-shadow: var(--glass-shadow);
   
-  /* Layout */
+  
   padding: var(--space-6);
   position: relative;
   overflow: hidden;
   
-  /* Animation */
+  
   transition: all var(--transition-base);
 }
-
-/* Shimmer effect background - προαιρετικό */
 .glass-card::before {
   content: '';
   position: absolute;
@@ -65,12 +38,6 @@
   pointer-events: none;
 }
 
-/* ====================================
-   CARD VARIANTS
-   Παραλλαγές του βασικού card
-   ==================================== */
-
-/* Hover Effect Card */
 .glass-card-hover:hover {
   background: var(--bg-glass-medium);
   border-color: rgba(147, 51, 234, 0.3);
@@ -79,10 +46,8 @@
 }
 
 .glass-card-hover:hover::before {
-  left: 100%; /* Shimmer animation on hover */
+  left: 100%; 
 }
-
-/* Interactive/Clickable Card */
 .glass-card-interactive {
   cursor: pointer;
   user-select: none;
@@ -101,26 +66,17 @@
   transform: translateY(-2px);
   box-shadow: var(--glass-shadow);
 }
-
-/* Bordered Card - Έντονο border */
 .glass-card-bordered {
   border: var(--glass-border-strong);
   box-shadow: 
     var(--glass-shadow),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
 }
-
-/* Flat Card - Χωρίς elevation */
 .glass-card-flat {
   box-shadow: none;
   backdrop-filter: none;
   background: var(--bg-glass-medium);
 }
-
-/* ====================================
-   CARD SIZES
-   Μεγέθη padding
-   ==================================== */
 
 .glass-card-sm {
   padding: var(--space-4);
@@ -137,11 +93,6 @@
 .glass-card-xl {
   padding: var(--space-12);
 }
-
-/* ====================================
-   CARD HEADER
-   Header section για το card
-   ==================================== */
 
 .glass-card-header {
   display: flex;
@@ -178,11 +129,6 @@
   font-size: var(--icon-lg);
 }
 
-/* ====================================
-   CARD CONTENT
-   Content sections
-   ==================================== */
-
 .glass-card-title {
   font-size: var(--text-xl);
   font-weight: var(--font-weight-semibold);
@@ -204,11 +150,6 @@
   margin-bottom: var(--space-4);
 }
 
-/* ====================================
-   CARD FOOTER
-   Footer section με actions
-   ==================================== */
-
 .glass-card-footer {
   display: flex;
   align-items: center;
@@ -218,11 +159,6 @@
   padding-top: var(--space-4);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
-
-/* ====================================
-   BADGE COMPONENT
-   Μικρά badges για tags, status κτλ
-   ==================================== */
 
 .badge {
   display: inline-flex;
@@ -236,8 +172,6 @@
   white-space: nowrap;
   transition: all var(--transition-fast);
 }
-
-/* Badge Variants - Status colors */
 .badge-success {
   background: var(--color-success-bg);
   border: 1px solid var(--color-success-border);
@@ -267,8 +201,6 @@
   border: var(--glass-border);
   color: var(--text-secondary);
 }
-
-/* Hoverable badges */
 .badge-hover:hover {
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);

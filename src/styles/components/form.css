@@ -1,16 +1,4 @@
-/* ==========================================
-   FORM COMPONENTS
-   ==========================================
-   
-   Input fields, textareas, labels
-   Με glass morphism styling
-   
-   ========================================== */
 
-/* ====================================
-   FORM GROUP
-   Container για label + input
-   ==================================== */
 
 .form-group {
   display: flex;
@@ -18,10 +6,6 @@
   gap: var(--space-2);
   margin-bottom: var(--space-6);
 }
-
-/* ====================================
-   LABELS
-   ==================================== */
 
 .form-label {
   font-size: var(--text-sm);
@@ -36,46 +20,38 @@
   margin-left: var(--space-1);
 }
 
-/* ====================================
-   INPUT FIELDS
-   ==================================== */
-
 .form-input,
 .form-textarea,
 .form-select {
-  /* Layout */
+  
   width: 100%;
   padding: var(--space-3) var(--space-4);
   
-  /* Typography */
+  
   font-family: inherit;
   font-size: var(--text-base);
   line-height: var(--line-height-normal);
   color: var(--text-primary);
   
-  /* Appearance */
+  
   background: var(--bg-glass-light);
   backdrop-filter: var(--glass-blur-light);
   border: var(--glass-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--glass-shadow);
   
-  /* Animation */
+  
   transition: all var(--transition-base);
   
-  /* Remove default styles */
+  
   outline: none;
   appearance: none;
 }
-
-/* Placeholder styling */
 .form-input::placeholder,
 .form-textarea::placeholder {
   color: var(--text-muted);
   opacity: 1;
 }
-
-/* Focus state */
 .form-input:focus,
 .form-textarea:focus,
 .form-select:focus {
@@ -85,15 +61,11 @@
     var(--glass-shadow-hover),
     0 0 0 3px rgba(147, 51, 234, 0.1);
 }
-
-/* Hover state */
 .form-input:hover:not(:focus),
 .form-textarea:hover:not(:focus),
 .form-select:hover:not(:focus) {
   border-color: rgba(255, 255, 255, 0.25);
 }
-
-/* Disabled state */
 .form-input:disabled,
 .form-textarea:disabled,
 .form-select:disabled {
@@ -102,18 +74,10 @@
   background: var(--bg-glass-dark);
 }
 
-/* ====================================
-   TEXTAREA
-   ==================================== */
-
 .form-textarea {
   min-height: 120px;
   resize: vertical;
 }
-
-/* ====================================
-   INPUT SIZES
-   ==================================== */
 
 .form-input-sm,
 .form-textarea-sm {
@@ -126,10 +90,6 @@
   padding: var(--space-4) var(--space-6);
   font-size: var(--text-lg);
 }
-
-/* ====================================
-   VALIDATION STATES
-   ==================================== */
 
 .form-input-error,
 .form-textarea-error {
@@ -156,10 +116,6 @@
     var(--glass-shadow-hover),
     0 0 0 3px var(--color-success-hover);
 }
-
-/* ====================================
-   HELPER TEXT
-   ==================================== */
 
 .form-helper {
   font-size: var(--text-xs);

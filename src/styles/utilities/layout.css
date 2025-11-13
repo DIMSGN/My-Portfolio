@@ -1,13 +1,4 @@
-/* ==========================================
-   LAYOUT UTILITIES
-   ==========================================
-   
-   Flexbox, Grid, Positioning utilities
-   ========================================== */
 
-/* ====================================
-   FLEXBOX UTILITIES
-   ==================================== */
 
 .flex { display: flex; }
 .inline-flex { display: inline-flex; }
@@ -33,10 +24,6 @@
 .flex-wrap { flex-wrap: wrap; }
 .flex-nowrap { flex-wrap: nowrap; }
 
-/* ====================================
-   GRID UTILITIES
-   ==================================== */
-
 .grid { display: grid; }
 .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
 .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
@@ -47,10 +34,6 @@
 .gap-md { gap: var(--space-md); }
 .gap-lg { gap: var(--space-lg); }
 .gap-xl { gap: var(--space-xl); }
-
-/* ====================================
-   POSITION UTILITIES
-   ==================================== */
 
 .relative { position: relative; }
 .absolute { position: absolute; }
@@ -63,10 +46,6 @@
 .bottom-0 { bottom: 0; }
 .left-0 { left: 0; }
 
-/* ====================================
-   SIZE UTILITIES
-   ==================================== */
-
 .w-full { width: 100%; }
 .w-auto { width: auto; }
 .h-full { height: 100%; }
@@ -78,10 +57,6 @@
 .max-w-lg { max-width: 1024px; }
 .max-w-xl { max-width: 1280px; }
 .max-w-2xl { max-width: 1536px; }
-
-/* ====================================
-   CONTAINER UTILITIES
-   ==================================== */
 
 .container {
   width: 100%;
@@ -98,12 +73,6 @@
   position: relative;
   overflow: hidden;
 }
-
-/* ====================================
-    RESPONSIVE CONTAINER TUNING
-    Progressive adjustments for padding and max-width
-    Breakpoints: 1150, 992, 768, 640, 480
-    ==================================== */
 
 @media (max-width: 1440px) {
    .container { max-width: 1200px; }

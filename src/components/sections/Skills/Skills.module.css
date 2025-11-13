@@ -1,10 +1,4 @@
-/* ==========================================
-   SKILLS.MODULE.CSS - Skills Section Styles
-   ==========================================
-   
-   UNIQUE STYLES ONLY
-   Lines: ~70 (UNDER 100 LINE LIMIT ✓)
-   ========================================== */
+
 
 .section {
   padding: var(--space-2xl) 0;
@@ -42,10 +36,6 @@
   margin: 0 auto;
   line-height: var(--line-height-relaxed);
 }
-
-/* ====================================
-   SKILLS GRID - UNIQUE LAYOUT
-   ==================================== */
 
 .grid {
   display: grid;
@@ -155,8 +145,6 @@
     line-height: 1.5;
   }
 }
-
-/* Skills List */
 .skillsList {
   display: flex;
   flex-direction: column;
@@ -199,8 +187,6 @@
     font-size: var(--font-size-sm);
   }
 }
-
-/* Use mixins for skill level badges */
 .levelExperienced {
   display: inline-flex;
   align-items: center;

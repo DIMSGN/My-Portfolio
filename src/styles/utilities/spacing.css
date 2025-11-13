@@ -1,13 +1,4 @@
-/* ==========================================
-   SPACING UTILITIES
-   ==========================================
-   
-   Margin and Padding utilities
-   ========================================== */
 
-/* ====================================
-   MARGIN UTILITIES
-   ==================================== */
 
 .m-0 { margin: 0; }
 .m-auto { margin: auto; }
@@ -25,10 +16,6 @@
 .mt-md { margin-top: var(--space-md); }
 .mt-lg { margin-top: var(--space-lg); }
 .mt-xl { margin-top: var(--space-xl); }
-
-/* ====================================
-   PADDING UTILITIES
-   ==================================== */
 
 .p-0 { padding: 0; }
 .p-sm { padding: var(--space-sm); }

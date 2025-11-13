@@ -1,16 +1,16 @@
-/* Header state when scrolled */
+
 .scrolled {
   background: var(--nav-bg-scrolled);
   border-bottom-color: var(--nav-border-scrolled);
   box-shadow: var(--nav-shadow-scrolled);
   backdrop-filter: blur(16px);
 }
-/* Shrink nav height slightly when scrolled for desktop ergonomics */
+
 .scrolled .navContainer {
   height: 4.25rem;
   padding: var(--space-3) var(--space-6);
 }
-/* Explicit active class for module usage */
+
 .active {
   color: white;
   background: rgba(147, 51, 234, 0.25);
@@ -23,18 +23,12 @@
   outline: 2px solid rgba(147, 51, 234, 0.6);
   outline-offset: 3px;
 }
-/* (Removed misplaced media query fragment) */
-/* Allow scrolling in case of many nav items */
 .mobileMenuContent {
   max-height: 100vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
-/* =============================
-   RESPONSIVE NAV REFINEMENTS
-   Progressive adjustments below
-   992 / 768 / 640 / 480
-   ============================= */
+
 @media (max-width: 992px) {
   .navContainer { padding: var(--space-3) var(--space-4); }
   .logoText { font-size: 1.25rem; }
@@ -61,36 +55,11 @@
   .mobileMenuContent { gap: var(--space-md); }
   .mobileMenuContent .navLink { font-size: var(--font-size-md); }
 }
-
-/* Extra small screens */
 @media (max-width: 360px) {
   .navContainer { padding: var(--space-1) 0; height: 3.25rem; }
   .logoIcon { width: var(--icon-sm); height: var(--icon-sm); }
   .logoText { font-size: 1rem; }
 }
-/* ==========================================
-   NAVIGATION.MODULE.CSS - Header Navigation
-   ==========================================
-   
-   UNIQUE STYLES ONLY
-   Lines: ~90 (UNDER 100 LINE LIMIT ✓)
-   ========================================== */
-
-/* ==========================================
-   NAVIGATION.MODULE.CSS - Header Navigation
-   ==========================================
-   
-   FIXED ISSUES:
-   - Removed !important abuse
-   - Used design system z-index
-   - Added focus states
-   - Mobile-first approach
-   
-   ========================================== */
-
-/* ====================================
-   HEADER - Καθαρό positioning χωρίς !important
-   ==================================== */
 
 .header {
   position: sticky;
@@ -107,7 +76,7 @@
 }
 
 .nav {
-  max-width: 1200px; /* Align with main app container */
+  max-width: 1200px; 
   margin: 0 auto;
   position: relative;
   padding: 0 var(--space-6);
@@ -133,10 +102,8 @@
   padding: var(--space-4) var(--space-6);
   height: 5rem;
   transition: height 0.2s ease, padding 0.2s ease;
-  gap: var(--space-md); /* Add gap to prevent overlap */
+  gap: var(--space-md); 
 }
-
-/* Logo */
 .logoContainer {
   display: flex;
   align-items: center;
@@ -150,10 +117,8 @@
   padding: 0;
   margin: 0;
 }
-
-/* Desktop navigation items */
 .desktopNav {
-  display: none; /* Hidden below ultra-wide */
+  display: none; 
   align-items: center;
   gap: var(--space-lg);
   flex: 1;
@@ -173,7 +138,7 @@
   color: white;
   box-shadow: 0 4px 16px rgba(147, 51, 234, 0.3);
   flex-shrink: 0;
-  width: var(--icon-lg);      /* Χρήση design system */
+  width: var(--icon-lg);      
   height: var(--icon-lg);
   font-size: var(--icon-base);
   border: 1px solid var(--bg-glass-light);
@@ -195,24 +160,16 @@
   letter-spacing: 0.05em;
   font-family: 'Cinzel', serif;
 }
-
-/* Hide logo text on small screens */
 @media (max-width: 640px) {
   .logoText { display: none; }
   .navContainer { padding: var(--space-3) var(--space-4); }
 }
-
-/* Compact header sizing for medium screens */
 @media (max-width: 1150px) {
   .navContainer { height: 4.5rem; padding: var(--space-3) var(--space-5); }
 }
 
-/* ====================================
-   HAMBURGER MENU BUTTON
-   ==================================== */
-
 .hamburger {
-  display: flex; /* Visible by default; hidden only on ultra-wide */
+  display: flex; 
   align-items: center;
   justify-content: center;
   background: none;
@@ -235,8 +192,6 @@
 .hamburger:active {
   transform: scale(0.95);
 }
-
-/* Ultra-wide layout: switch to desktop navigation */
 @media (min-width: 1600px) {
   .desktopNav { display: flex; }
   .hamburger { display: none; }
@@ -244,10 +199,6 @@
   .nav { max-width: 1400px; }
   .navContainer { height: 5rem; padding: var(--space-4) var(--space-6); }
 }
-
-/* ====================================
-   MOBILE MENU OVERLAY
-   ==================================== */
 
 .mobileMenu {
   position: fixed;
@@ -297,8 +248,6 @@
   will-change: transform, opacity;
   contain: layout style paint;
 }
-
-/* Compact mobile menu for very small screens */
 @media (max-width: 400px) {
   .mobileMenuContent {
     gap: var(--space-sm);
@@ -323,8 +272,6 @@
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   contain: layout paint;
 }
-
-/* Smaller links on very small screens */
 @media (max-width: 400px) {
   .mobileMenuContent .navLink,
   .mobileNavLink {
@@ -377,8 +324,6 @@
   transform: translateX(2px) scale(.98);
 }
 
-/* Desktop navigation visible only >1150px; hamburger replaces below */
-
 .navLink {
   color: var(--text-secondary);
   text-decoration: none;
@@ -406,8 +351,6 @@
 .logoContainer:active {
   transform: scale(0.98);
 }
-
-/* Desktop Navigation continues to work normally above 768px */
 
 .ctaButton {
   display: inline-flex;

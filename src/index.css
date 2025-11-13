@@ -1,30 +1,6 @@
-/* ==========================================
-   INDEX.CSS - Global Styles Entry Point
-   ==========================================
-   
-   This file imports all global styles in the correct order.
-   
-   Architecture:
-   1. Variables (Design Tokens)
-   2. Base Styles (Resets & Elements)
-   3. Components (Reusable UI Components)
-   4. Utilities (Helper Classes)
-   
-   Component-specific styles are imported
-   directly in their respective component files.
-   ========================================== */
 
-/* 1. CSS Variables - Design System */
 @import './styles/variables.css';
-
-/* 2. Animations - Centralized keyframes */
 @import './styles/animations.css';
-
-/* 3. Base Styles - Global resets and elements */
 @import './styles/base.css';
-
-/* 4. Reusable Components - Buttons, Cards, etc */
 @import './styles/components/index.css';
-
-/* 5. Utility Classes - Organized by category */
 @import './styles/utilities/index.css';

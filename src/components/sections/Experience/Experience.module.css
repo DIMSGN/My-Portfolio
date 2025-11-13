@@ -1,10 +1,4 @@
-/* ==========================================
-   EXPERIENCE.MODULE.CSS - Experience Section
-   ==========================================
-   
-   UNIQUE STYLES ONLY - Timeline is the only unique pattern
-   Lines: ~95 (UNDER 100 LINE LIMIT ✓)
-   ========================================== */
+
 
 .section {
   padding: var(--space-3xl) var(--space-xl);
@@ -46,10 +40,6 @@
   max-width: 600px;
   margin: 0 auto;
 }
-
-/* ====================================
-   TIMELINE - UNIQUE TO EXPERIENCE
-   ==================================== */
 
 .timeline {
   position: relative;
@@ -97,8 +87,6 @@
   justify-content: flex-start;
   text-align: left;
 }
-
-/* Timeline Icon - positioned absolutely */
 .icon {
   display: flex;
   align-items: center;
@@ -124,8 +112,6 @@
 .icon:hover {
   transform: translateX(-50%) scale(1.1);
 }
-
-/* Experience Card */
 .card {
   background: var(--bg-glass-light);
   backdrop-filter: var(--glass-blur);
@@ -169,8 +155,6 @@
 .itemRight .card {
   margin-left: var(--space-2xl);
 }
-
-/* Card Meta */
 .meta {
   display: flex;
   flex-wrap: wrap;
@@ -215,8 +199,6 @@
   color: var(--text-secondary);
   margin-bottom: var(--space-md);
 }
-
-/* Skills section in card */
 .skillsSection {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: var(--space-md);
@@ -234,8 +216,6 @@
   flex-wrap: wrap;
   gap: var(--space-xs);
 }
-
-/* CTA Section */
 .cta {
   text-align: center;
   margin-top: var(--space-2xl);
@@ -274,12 +254,8 @@
   margin-bottom: var(--space-lg);
 }
 
-/* ====================================
-   RESPONSIVE
-   ==================================== */
-
 @media (max-width: 1150px) {
-  /* Mobile: Stack cards vertically, full width */
+  
   .timeline {
     display: flex;
     flex-direction: column;
@@ -287,12 +263,12 @@
     padding: 0;
   }
   
-  /* Hide timeline line on mobile */
+  
   .timelineLine {
     display: none;
   }
   
-  /* Reset positioning for mobile stack */
+  
   .item,
   .itemLeft,
   .itemRight {
@@ -302,12 +278,12 @@
     width: 100%;
   }
   
-  /* Hide timeline icons on mobile */
+  
   .icon {
     display: none;
   }
   
-  /* Full-width cards */
+  
   .card,
   .itemLeft .card,
   .itemRight .card {
@@ -315,7 +291,7 @@
     margin-right: 0;
     max-width: none;
     width: 100%;
-    /* Enhanced background for mobile - closer to desktop */
+    
     background: rgba(15, 15, 35, 0.7);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(147, 51, 234, 0.3);
@@ -333,7 +309,7 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.15);
   }
   
-  /* Adjust section padding for mobile */
+  
   .section {
     padding: 2rem 1rem 5rem 1rem;
   }

@@ -1,8 +1,4 @@
-/* ==========================================
-   ERROR BOUNDARY STYLES - CSS MODULE
-   ==========================================
-   Using design tokens from variables.css
-   ========================================== */
+
 
 .errorBoundary {
   min-height: 100vh;
@@ -110,7 +106,7 @@
 .errorStack {
   font-family: 'Courier New', monospace;
   font-size: var(--font-size-xs);
-  color: var(--color-warning); /* Use semantic token instead of hardcoded yellow */
+  color: var(--color-warning); 
   white-space: pre-wrap;
   max-height: 200px;
   overflow-y: auto;
@@ -119,5 +115,3 @@
   border-radius: 0.25rem;
   margin: 0;
 }
-
-

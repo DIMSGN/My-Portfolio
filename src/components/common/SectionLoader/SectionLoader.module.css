@@ -1,8 +1,4 @@
-/* ==========================================
-   SECTION LOADER STYLES - CSS MODULE
-   ==========================================
-   Using design tokens from variables.css
-   ========================================== */
+
 
 .sectionLoader {
   min-height: 400px;
@@ -55,13 +51,9 @@
   animation-duration: 1s;
 }
 
-/* Spin animation is defined in base.css */
-
 .loaderMessage {
   color: var(--text-secondary);
   font-size: var(--font-size-sm);
   margin: 0;
   opacity: 0.8;
 }
-
-

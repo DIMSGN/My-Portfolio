@@ -1,10 +1,4 @@
-/* ==========================================
-   PROJECTS.MODULE.CSS - Projects Section Styles
-   ==========================================
-   
-   UNIQUE STYLES ONLY
-   Lines: ~75 (UNDER 100 LINE LIMIT ✓)
-   ========================================== */
+
 
 .section {
   padding: var(--space-2xl) 0;
@@ -43,19 +37,12 @@
   line-height: var(--line-height-relaxed);
 }
 
-/* ====================================
-   PROJECTS GRID - FIXED
-   Mobile-safe grid με min(100%, 340px)
-   ==================================== */
-
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: var(--space-6);
   margin-bottom: var(--space-12);
 }
-
-
 
 .card {
   background: var(--bg-glass-light);
@@ -80,8 +67,6 @@
     0 0 0 1px rgba(147, 51, 234, 0.2);
   transform: translateY(-6px);
 }
-
-/* Icon Header */
 .imagePlaceholder {
   position: relative;
   height: 140px;
@@ -99,8 +84,6 @@
   color: rgba(147, 51, 234, 0.7);
   background: linear-gradient(135deg, rgba(147, 51, 234, 0.18) 0%, rgba(59, 130, 246, 0.12) 100%);
 }
-
-/* Project Links */
 .links {
   display: flex;
   gap: 0.75rem;
@@ -156,8 +139,6 @@
 .link:active {
   transform: scale(0.98);
 }
-
-/* Coming Soon Badge */
 .comingSoon {
   display: inline-flex;
   align-items: center;
@@ -172,10 +153,6 @@
   flex: 1;
   min-width: 120px;
 }
-
-
-
-/* Content */
 .content {
   padding: 1.5rem;
   display: flex;
@@ -183,8 +160,6 @@
   gap: 1rem;
   flex: 1;
 }
-
-/* Title Section */
 .titleSection {
   display: flex;
   flex-direction: column;
@@ -216,8 +191,6 @@
   font-size: 0.9375rem;
   margin: 0;
 }
-
-/* Highlights */
 .highlights {
   list-style: none;
   padding: 0;

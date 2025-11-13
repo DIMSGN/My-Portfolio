@@ -1,15 +1,4 @@
-/* ==========================================
-   MOBILE RESPONSIVE FIXES
-   ==========================================
-   
-   Critical fixes for mobile layout issues
-   Ensures no horizontal scrolling and proper containment
-   ========================================== */
 
-/* ====================================
-   GLOBAL MOBILE CONTAINER FIX
-   Prevent horizontal overflow on all screens
-   ==================================== */
 
 html {
   overflow-x: hidden;
@@ -27,13 +16,9 @@ body {
   width: 100%;
 }
 
-/* ====================================
-   MOBILE LAYOUT CONSTRAINTS
-   ==================================== */
-
-@media (max-width: 768px) { /* var(--breakpoint-sm) */
+@media (max-width: 768px) { 
   
-  /* Ensure all sections respect viewport width */
+  
   section,
   .section,
   .container,
@@ -42,32 +27,32 @@ body {
     overflow-x: hidden;
   }
   
-  /* Normal scrolling layout - not slideshow */
+  
   section {
     min-height: auto;
     padding: var(--space-20) var(--space-4);
   }
   
-  /* Fix grid overflow issues */
+  
   .grid,
   [class*="grid"] {
     width: 100%;
     max-width: 100%;
   }
   
-  /* Prevent images from overflowing */
+  
   img {
     max-width: 100%;
     height: auto;
   }
   
-  /* Fix flexbox overflow */
+  
   .flex,
   [class*="flex"] {
     flex-wrap: wrap;
   }
   
-  /* Ensure cards don't overflow */
+  
   .card,
   .glass-card,
   [class*="card"] {
@@ -75,16 +60,11 @@ body {
     width: 100%;
   }
   
-  /* Fix padding that might cause overflow */
+  
   * {
     box-sizing: border-box;
   }
 }
-
-/* ====================================
-   MOBILE TYPOGRAPHY
-   Ensure readability on small screens
-   ==================================== */
 
 @media (max-width: 768px) {
   h1 {
@@ -109,7 +89,7 @@ body {
     line-height: 1.6;
   }
   
-  /* Prevent long words from breaking layout */
+  
   p, li, span {
     overflow-wrap: break-word;
     word-wrap: break-word;
@@ -117,11 +97,6 @@ body {
   }
 }
 
-/* ====================================
-   MOBILE SPACING
-   Reduce padding on small screens
-   ==================================== */
-
 @media (max-width: 768px) {
   section {
     padding-left: var(--space-4);
@@ -134,7 +109,7 @@ body {
   }
 }
 
-@media (max-width: 480px) { /* var(--breakpoint-xs) */
+@media (max-width: 480px) { 
   section {
     padding-left: var(--space-3);
     padding-right: var(--space-3);
@@ -145,21 +120,16 @@ body {
     padding-right: var(--space-3);
   }
 }
-
-/* ====================================
-   MOBILE FORM FIXES
-   Prevent zoom on iOS
-   ==================================== */
 
 @media (max-width: 768px) {
   input,
   textarea,
   select {
-    font-size: 16px; /* Prevents iOS auto-zoom */
+    font-size: 16px; 
     max-width: 100%;
   }
   
-  /* Prevent input overflow */
+  
   input[type="text"],
   input[type="email"],
   input[type="tel"],
@@ -169,11 +139,6 @@ body {
   }
 }
 
-/* ====================================
-   MOBILE BUTTON FIXES
-   Full-width buttons on small screens
-   ==================================== */
-
 @media (max-width: 480px) {
   .btn,
   button {
@@ -181,17 +146,12 @@ body {
     justify-content: center;
   }
   
-  /* Exception for icon-only buttons */
+  
   .btn-icon,
   button[aria-label]:not([aria-label=""]) {
     width: auto;
   }
 }
-
-/* ====================================
-   MOBILE TABLE FIXES
-   Make tables scrollable
-   ==================================== */
 
 @media (max-width: 768px) {
   table {
@@ -202,47 +162,34 @@ body {
   }
 }
 
-/* ====================================
-   LANDSCAPE MODE OPTIMIZATION
-   ==================================== */
-
 @media (max-width: 768px) and (orientation: landscape) {
-  /* Reduce vertical padding in landscape */
+  
   section {
     padding-top: var(--space-6);
     padding-bottom: var(--space-6);
   }
   
-  /* Make navigation more compact */
+  
   .header {
     height: 50px;
   }
 }
 
-/* ====================================
-   ACCESSIBILITY - MOBILE FOCUS STATES
-   ==================================== */
-
 @media (max-width: 768px) {
-  /* Larger focus rings for touch devices */
+  
   *:focus-visible {
     outline: 3px solid var(--color-secondary);
     outline-offset: 3px;
   }
   
-  /* Ensure tap targets don't overlap */
+  
   a, button, input, select, textarea {
     margin: var(--space-1) 0;
   }
 }
 
-/* ====================================
-   MOBILE PERFORMANCE
-   Simplify effects with CSS variables
-   ==================================== */
-
 @media (max-width: 768px) {
-  /* Override shadow variables for lighter effects */
+  
   :root {
     --shadow-lg: 0 2px 8px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 4px 12px rgba(0, 0, 0, 0.12);
@@ -252,7 +199,7 @@ body {
     --glass-shadow-strong: 0 6px 16px rgba(0, 0, 0, 0.15);
   }
   
-  /* Simplify animations */
+  
   * {
     animation-duration: 0.2s !important;
   }

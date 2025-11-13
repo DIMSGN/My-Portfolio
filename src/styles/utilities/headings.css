@@ -1,31 +1,19 @@
-/* ==========================================
-   FUTURISTIC 3D GLASS HEADINGS
-   ==========================================
-   
-   Lightweight futuristic headings with subtle depth
-   No animations, minimal effects for performance
-   
-   Usage: Apply .heading-futuristic to h2 elements
-   ========================================== */
 
-/* ====================================
-   FUTURISTIC HEADING BASE
-   ==================================== */
 
 .heading-futuristic {
-  /* Typography - Fluid and responsive */
+  
   font-size: clamp(2.5rem, 6vw + 1rem, 4.5rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
   text-align: center;
   
-  /* Positioning for pseudo-elements */
+  
   position: relative;
   display: inline-block;
   width: 100%;
   
-  /* Subtle gradient text */
+  
   background: linear-gradient(
     180deg,
     #ffffff 0%,
@@ -36,16 +24,12 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   
-  /* Fallback color for non-supporting browsers */
+  
   color: #ffffff;
   
-  /* Subtle text shadow for depth */
+  
   filter: drop-shadow(0 2px 4px rgba(147, 51, 234, 0.3));
 }
-
-/* ====================================
-   SUBTLE DEPTH LAYER - Behind text
-   ==================================== */
 
 .heading-futuristic::before {
   content: attr(data-text);
@@ -55,7 +39,7 @@
   right: 0;
   z-index: -1;
   
-  /* Light gradient for subtle depth */
+  
   background: linear-gradient(
     180deg,
     rgba(147, 51, 234, 0.3) 0%,
@@ -65,20 +49,10 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   
-  /* Light blur */
+  
   filter: blur(1px);
   opacity: 0.6;
 }
-
-/* ====================================
-   RESPONSIVE ADJUSTMENTS
-   ==================================== */
-
-
-
-/* ====================================
-   ACCESSIBILITY - REDUCED MOTION
-   ==================================== */
 
 @media (prefers-reduced-motion: reduce) {
   .heading-futuristic,
@@ -86,10 +60,6 @@
     filter: none;
   }
 }
-
-/* ====================================
-   FEATURE QUERY FALLBACK
-   ==================================== */
 
 @supports not (background-clip: text) {
   .heading-futuristic {
