@@ -26,14 +26,12 @@ const About: FC = () => {
 
             <div className={styles.personalInfo}>
               <p className={styles.personalDescription}>
-                Full-stack developer with a disciplined, systems-thinking approach
-                developed through diverse professional experiences. Currently
-                completing intensive training at AUEB Coding Factory while building
-                real-world applications. I focus on understanding architectural
-                patterns deeply, writing maintainable code that scales, and
-                delivering solutions that solve genuine problems. My background in
-                multiple industries brings valuable perspective to technical
-                problem-solving and team collaboration.
+                Hey! I'm a developer who loves creating things that work well and look good.
+                I'm currently studying at AUEB Coding Factory and spending most of my time
+                building projects to learn new concepts. What I enjoy most is that moment
+                when something finally clicks and starts working. I try to write clean code
+                and actually understand what I'm doing instead of just copying solutions.
+                Always learning something new!
               </p>
 
               <div className={styles.techStack}>

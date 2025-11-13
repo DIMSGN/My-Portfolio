@@ -55,9 +55,9 @@ const Hero: FC = () => {
               <span className={styles.role}>{PERSONAL_INFO.role}</span>
             </h1>
             <p className={styles.description}>
-              Full-stack developer building production-ready applications with
-              React, Node.js, and SQL. Specialized in creating clean, scalable
-              solutions with modern architectures and engineering best practices.
+              I enjoy building web applications and solving problems with code.
+              Currently learning full-stack development with React and Node.js,
+              and always excited to take on new challenges.
             </p>
           </div>
 

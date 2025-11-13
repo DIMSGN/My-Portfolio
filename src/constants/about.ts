@@ -6,19 +6,19 @@ export const CORE_VALUES: CoreValue[] = [
   {
     title: 'Clean Code',
     description:
-      'Writing maintainable, scalable, and well-documented code that stands the test of time.',
+      'I try to write code that makes sense when I (or someone else) comes back to it later.',
     icon: Code2,
   },
   {
-    title: 'Continuous Learning',
+    title: 'Always Learning',
     description:
-      'Staying current with emerging technologies and best practices in development.',
+      "There's always something new to learn in web development, and that's what keeps it interesting.",
     icon: Award,
   },
   {
-    title: 'Problem-Solving',
+    title: 'Problem Solving',
     description:
-      'Approaching challenges methodically, understanding systems end-to-end, and finding elegant solutions.',
+      'I like breaking down complex problems into smaller pieces and figuring out how things work.',
     icon: Rocket,
   },
 ];

@@ -6,7 +6,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: 'Frontend Development',
     icon: Code,
-    description: 'Building modern, responsive user interfaces with component-driven architecture',
+    description: 'Building user interfaces and making things look good across different devices',
     skills: [
       { name: 'JavaScript (ES6+)', level: 'Experienced' },
       { name: 'React.js', level: 'Experienced' },
@@ -19,7 +19,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: 'Backend Development',
     icon: Server,
-    description: 'Developing RESTful APIs and server-side applications',
+    description: 'Creating APIs and handling server-side logic',
     skills: [
       { name: 'Node.js', level: 'Experienced' },
       { name: 'Express.js', level: 'Experienced' },
@@ -31,7 +31,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: 'Database & Cloud',
     icon: Database,
-    description: 'Working with SQL and NoSQL databases for data persistence',
+    description: 'Working with databases to store and manage data',
     skills: [
       { name: 'MySQL', level: 'Experienced' },
       { name: 'PostgreSQL', level: 'Familiar' },
@@ -43,7 +43,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: 'Tools & Workflow',
     icon: Settings,
-    description: 'Development tools and version control for efficient collaboration',
+    description: 'Tools I use daily for development and collaboration',
     skills: [
       { name: 'Git & GitHub', level: 'Experienced' },
       { name: 'VS Code', level: 'Experienced' },

@@ -7,11 +7,11 @@ export const PROJECTS: Project[] = [
     title: "PropFlow",
     subtitle: "Property & Client Management CRM",
     shortDescription:
-      "Full-stack CRM for real estate agencies managing 100+ properties with <200ms response times. Features appointment scheduling, document management, and property listings with role-based access control.",
+      "A CRM I built for managing real estate properties and clients. It handles property listings, appointments, and document uploads. I learned a lot about database relationships and authentication while building this.",
     highlights: [
-      "Handles 100+ concurrent property listings",
-      "Role-based access (Admin/Agent) with JWT auth",
-      "Document upload & management with cloud storage",
+      "Manages 100+ properties with fast search",
+      "Admin and Agent roles with JWT authentication",
+      "File uploads for property documents",
     ],
     technologies: [
       "React",
@@ -29,11 +29,11 @@ export const PROJECTS: Project[] = [
     title: "Algorithm Visualizer",
     subtitle: "Interactive Learning Tool",
     shortDescription:
-      "Educational platform visualizing 12+ algorithms across sorting, searching, hashing, and recursion with step-by-step execution controls and editable datasets.",
+      "Built this to help me (and others) understand algorithms better through visualization. You can see sorting, searching, and other algorithms work step-by-step. It's actually pretty fun to watch!",
     highlights: [
-      "12+ algorithms with animated visualizations",
-      "Step-by-step execution with pause/resume",
-      "Real-time input editing and complexity analysis",
+      "Visualizes 12+ different algorithms",
+      "Step controls to pause and analyze each step",
+      "Edit the data and see how it affects the algorithm",
     ],
     technologies: ["React", "Vite", "JavaScript", "CSS"],
     demoUrl: "https://dimsgn.github.io/Algorithm_Project/",
@@ -44,11 +44,11 @@ export const PROJECTS: Project[] = [
     title: "Restaurant Manager",
     subtitle: "Operations Management System",
     shortDescription:
-      "Enterprise-grade TypeScript application with ACID-compliant SERIALIZABLE transactions, inventory tracking with automatic stock deduction, and real-time recipe cost calculation.",
+      "My first real TypeScript project! It manages restaurant inventory, recipes, and orders. Had to figure out database transactions to prevent inventory issues when multiple orders happen at once. Learned a ton about Prisma ORM.",
     highlights: [
-      "SERIALIZABLE isolation preventing race conditions",
-      "JWT authentication with role-based authorization",
-      "Automatic inventory management across transactions",
+      "Handles concurrent orders without inventory conflicts",
+      "User authentication and different permission levels",
+      "Auto-calculates recipe costs based on current inventory",
     ],
     technologies: [
       "TypeScript",
@@ -64,13 +64,13 @@ export const PROJECTS: Project[] = [
   {
     id: 4,
     title: "Portfolio Site",
-    subtitle: "Modern React Portfolio",
+    subtitle: "This Website!",
     shortDescription:
-      "Personal portfolio built with React 19, TypeScript, and Vite. Features custom design token system, Intersection Observer-based navigation, comprehensive responsive breakpoints (1600-360px), and code-split architecture achieving 68KB gzipped bundle size.",
+      "You're looking at it! Built with React 19 and TypeScript. I wanted to create something responsive that works well on all screen sizes. Spent a lot of time getting the mobile view just right.",
     highlights: [
-      "8 responsive breakpoints with mobile-first design",
-      "Custom hooks (useNavigation, useMediaQuery, useScrollLock)",
-      "CSS Modules + design tokens for maintainability",
+      "Fully responsive across all devices",
+      "Custom hooks for navigation and mobile menu",
+      "Fast loading with code splitting",
     ],
     technologies: ["React 19", "TypeScript", "Vite", "CSS Modules", "Lucide Icons"],
     demoUrl: "https://dimsgn.github.io/My-Portfolio/",
