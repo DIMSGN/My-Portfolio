@@ -298,6 +298,15 @@
   contain: layout style paint;
 }
 
+/* Compact mobile menu for very small screens */
+@media (max-width: 400px) {
+  .mobileMenuContent {
+    gap: var(--space-sm);
+    padding: var(--space-lg) var(--space-sm) var(--space-lg);
+    max-width: calc(100vw - var(--space-lg));
+  }
+}
+
 .mobileMenuContent .navLink,
 .mobileNavLink {
   font-size: var(--font-size-xl);
@@ -313,6 +322,15 @@
   letter-spacing: 0.02em;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   contain: layout paint;
+}
+
+/* Smaller links on very small screens */
+@media (max-width: 400px) {
+  .mobileMenuContent .navLink,
+  .mobileNavLink {
+    font-size: var(--font-size-lg);
+    padding: var(--space-sm) var(--space-md);
+  }
 }
 
 .mobileMenuContent .navLink::before,
