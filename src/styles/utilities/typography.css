@@ -1,0 +1,62 @@
+/* ==========================================
+   TYPOGRAPHY UTILITIES
+   ==========================================
+   
+   Text colors, alignment, weights, effects
+   ========================================== */
+
+/* ====================================
+   TEXT COLORS
+   ==================================== */
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-disabled { color: var(--text-disabled); }
+
+/* ====================================
+   TEXT ALIGNMENT
+   ==================================== */
+
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* ====================================
+   FONT WEIGHTS
+   ==================================== */
+
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+
+/* ====================================
+   TEXT EFFECTS
+   ==================================== */
+
+.text-gradient {
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title-glow {
+  text-shadow: var(--glow-purple);
+  filter: drop-shadow(0 4px 20px rgba(147, 51, 234, 0.4));
+}
+
+/* ====================================
+   TEXT DECORATIONS
+   ==================================== */
+
+.no-decoration,
+.no-decoration:hover,
+.no-decoration:visited,
+.no-decoration:active,
+.no-decoration:focus {
+  text-decoration: none;
+  border: none;
+  outline: none;
+}

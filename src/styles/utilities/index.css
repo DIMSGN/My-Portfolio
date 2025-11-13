@@ -1,0 +1,22 @@
+/* ==========================================
+   UTILITIES INDEX
+   ==========================================
+   
+   Central import for all utility classes
+   Organized by category for maintainability
+   ========================================== */
+
+/* Layout & Structure */
+@import './layout.css';
+
+/* Spacing */
+@import './spacing.css';
+
+/* Typography */
+@import './typography.css';
+
+/* Colors & Backgrounds */
+@import './colors.css';
+
+/* Effects & Interactions */
+@import './effects.css';

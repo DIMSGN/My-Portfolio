@@ -1,0 +1,124 @@
+/* ==========================================
+   GRID COMPONENTS
+   ==========================================
+   
+   Responsive grid layouts
+   Για projects, skills, cards κτλ
+   
+   ========================================== */
+
+/* ====================================
+   AUTO-FIT GRIDS
+   Αυτόματη προσαρμογή columns
+   ==================================== */
+
+/* Default grid - 300px minimum */
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: var(--space-6);
+}
+
+/* Small cards grid - 250px minimum */
+.grid-auto-sm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: var(--space-4);
+}
+
+/* Large cards grid - 350px minimum */
+.grid-auto-lg {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+  gap: var(--space-8);
+}
+
+/* ====================================
+   FIXED COLUMN GRIDS
+   Συγκεκριμένος αριθμός columns
+   ==================================== */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+/* ====================================
+   GAP MODIFIERS
+   Διαφορετικά gaps
+   ==================================== */
+
+.gap-sm {
+  gap: var(--space-4);
+}
+
+.gap-md {
+  gap: var(--space-6);
+}
+
+.gap-lg {
+  gap: var(--space-8);
+}
+
+.gap-xl {
+  gap: var(--space-12);
+}
+
+/* ====================================
+   RESPONSIVE ADAPTATIONS
+   Professional breakpoint cascade
+   Breakpoints used:
+   - 1150px (Large -> Medium)
+   - 992px  (Medium -> Tablet)
+   - 768px  (Tablet -> Small Tablet)
+   - 640px  (Mobile Landscape)
+   - 480px  (Small Phones)
+   Mobile-first: adjustments progressively reduce columns & gaps
+   ==================================== */
+
+/* Reduce large fixed grids on medium screens */
+@media (max-width: 1150px) {
+  .grid-4 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Collapse to 2 columns for typical tablet widths */
+@media (max-width: 992px) {
+  .grid-4, .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Narrow tablets / large phones: move towards single column for dense content */
+@media (max-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  /* Tighten gaps slightly for space efficiency */
+  .gap-lg { gap: var(--space-6); }
+  .gap-xl { gap: var(--space-8); }
+}
+
+/* Mobile landscape: unify all fixed grids to 1 column except explicit overrides */
+@media (max-width: 640px) {
+  .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  .gap-md { gap: var(--space-4); }
+  .gap-lg { gap: var(--space-6); }
+  .gap-xl { gap: var(--space-6); }
+}
+
+/* Small phones: tighten spacing further */
+@media (max-width: 480px) {
+  .grid-auto, .grid-auto-sm, .grid-auto-lg { gap: var(--space-4); }
+  .gap-lg, .gap-xl { gap: var(--space-4); }
+}
+
+

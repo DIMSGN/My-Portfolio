@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Full-stack developer specializing in React, TypeScript, and Node.js. View my portfolio, projects, and experience in web development." />
+    
+    <title>Dimitris Siganos - Full-Stack Developer</title>
+    
+    <!-- CRITICAL CSS for above-the-fold content (LCP optimization) -->
+    <style>
+      /* Critical styles for immediate render - Optimized for mobile */
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { 
+        font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        background: #0f0f23;
+        color: #ffffff;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      #root { min-height: 100vh; background: transparent; }
+      .hero-section { 
+        min-height: 100vh; 
+        position: relative; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+      }
+      .title-name { 
+        font-size: clamp(2rem, 6vw, 4rem);
+        font-weight: 700;
+        background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #dbeafe 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1.2;
+        width: 100%;
+        height: auto;
+        contain: layout;
+      }
+      /* Prevent layout shifts */
+      .hero-content { contain: layout; }
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+      /* Loading state */
+      .loading { 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        min-height: 100vh; 
+        font-size: 1.5rem;
+      }
+    </style>
+    
+    <!-- GitHub Pages SPA redirect handler -->
+    <script>
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+    
+    <!-- Defer non-critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

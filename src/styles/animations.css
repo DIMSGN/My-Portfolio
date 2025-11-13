@@ -1,0 +1,203 @@
+/* ==========================================
+   ANIMATIONS - Centralized Keyframes
+   ==========================================
+   
+   All @keyframes animations for the portfolio.
+   Organized by category for easy maintenance.
+   
+   Categories:
+   - Movement (float, bounce)
+   - Effects (glow, shimmer, pulse)
+   - UI (fade, spin, heartbeat)
+   ========================================== */
+
+/* ====================================
+   MOVEMENT ANIMATIONS
+   ==================================== */
+
+/* Floating animation for background elements */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-20px); 
+  }
+}
+
+/* Particle floating animation - more complex movement */
+@keyframes particleFloat {
+  0%, 100% { 
+    transform: translate(0, 0) scale(1); 
+    opacity: 0.3; 
+  }
+  25% { 
+    transform: translate(10px, -15px) scale(1.1); 
+    opacity: 0.8; 
+  }
+  50% { 
+    transform: translate(-5px, -25px) scale(0.9); 
+    opacity: 0.6; 
+  }
+  75% { 
+    transform: translate(-15px, -10px) scale(1.05); 
+    opacity: 0.7; 
+  }
+}
+
+/* Bounce animation for scroll indicators and interactive elements */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { 
+    transform: translateY(0); 
+  }
+  40% { 
+    transform: translateY(-5px); 
+  }
+  60% { 
+    transform: translateY(-3px); 
+  }
+}
+
+/* Subtle bounce for optimized performance */
+@keyframes bounce-subtle {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(1px); 
+  }
+}
+
+/* ====================================
+   GLOW & PULSE EFFECTS
+   ==================================== */
+
+/* Pulse animation for glowing elements */
+@keyframes glowPulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.15);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(147, 51, 234, 0.25), 
+                0 0 80px rgba(59, 130, 246, 0.15);
+  }
+}
+
+/* Logo glow animation */
+@keyframes logoGlow {
+  0%, 100% { 
+    text-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+  }
+  50% { 
+    text-shadow: 0 0 30px rgba(147, 51, 234, 0.8), 
+                 0 0 40px rgba(59, 130, 246, 0.3);
+  }
+}
+
+/* Simple opacity pulse */
+@keyframes pulse {
+  0%, 100% { 
+    opacity: 1; 
+  }
+  50% { 
+    opacity: 0.5; 
+  }
+}
+
+/* Lighter bounce for performance-optimized components */
+@keyframes bounce-light {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(2px); 
+  }
+}
+
+/* ====================================
+   SHIMMER & SHINE EFFECTS
+   ==================================== */
+
+/* Shimmer effect for text and backgrounds */
+@keyframes shimmerEffect {
+  0% { 
+    background-position: -200% center;
+  }
+  100% { 
+    background-position: 200% center;
+  }
+}
+
+/* ====================================
+   UI ANIMATIONS
+   ==================================== */
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Spin animation for loaders */
+@keyframes spin {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg); 
+  }
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+  0%, 50%, 100% {
+    transform: scale(1);
+  }
+  25%, 75% {
+    transform: scale(1.1);
+  }
+}
+
+/* ====================================
+   ANIMATION UTILITY CLASSES
+   ==================================== */
+
+/* Apply animations with utility classes */
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-bounce { animation: bounce 2s ease-in-out infinite; }
+.animate-pulse { animation: pulse 2s ease-in-out infinite; }
+.animate-spin { animation: spin 1s linear infinite; }
+.animate-shimmer { animation: shimmerEffect 3s ease-in-out infinite; }
+.animate-fadeIn { animation: fadeIn 0.6s ease-out forwards; }
+
+/* Performance optimization for animations */
+.animate-float,
+.animate-bounce,
+.animate-pulse,
+.animate-spin {
+  will-change: transform;
+}
+
+/* ====================================
+   PERFORMANCE OPTIMIZATION
+   Disable animations on:
+   - Small screens (mobile devices)
+   - User prefers reduced motion
+   ==================================== */
+
+/* Respect user's reduced motion preference (accessibility) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

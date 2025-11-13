@@ -1,0 +1,365 @@
+/* ==========================================
+   HERO.MODULE.CSS - Hero Section Styles
+   ==========================================
+   
+   FIXES APPLIED:
+   - Used consistent typography variables (--text-4xl)
+   - Added mobile responsive styles
+   - Removed duplicate button code (use global .btn)
+   - Used spacing system correctly
+   - Mobile-first approach
+   
+   ========================================== */
+
+/* ====================================
+   HERO LAYOUT
+   ==================================== */
+
+.hero {
+  padding: var(--space-section-y) var(--space-section-x);
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  text-align: center;
+  position: relative;
+  z-index: var(--z-base);
+}
+
+/* ====================================
+   HERO TYPOGRAPHY
+   Χρήση design system variables
+   ==================================== */
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.name {
+  font-size: var(--text-4xl);  /* Design system - responsive */
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.role {
+  font-size: var(--text-lg);  /* Design system - responsive */
+  font-weight: var(--font-weight-semibold);
+  color: rgba(147, 51, 234, 0.9);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+.description {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  max-width: var(--content-narrow);
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);  /* Design system spacing */
+}
+
+.skill {
+  display: inline-block;
+  background: var(--bg-glass-medium);
+  color: rgba(255, 255, 255, 0.9);
+  border: var(--glass-border);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-base);
+}
+
+.skill:hover {
+  background: var(--bg-glass-strong);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 100; /* Higher than pagination dots */
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+/* ====================================
+   SCROLL INDICATOR
+   Unique to Hero section
+   ==================================== */
+
+.scroll {
+  position: absolute;
+  bottom: var(--space-12);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+}
+
+.scroll:hover {
+  color: var(--text-primary);
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.scrollText {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.scrollIcon {
+  animation: bounce 2s infinite;
+}
+
+/* ====================================
+   BUTTONS - Τώρα χρησιμοποιούμε global .btn
+   Διατηρούμε μόνο για backward compatibility
+   TODO: Migrate to global .btn classes
+   ==================================== */
+
+.btnPrimary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-8);
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all var(--transition-base);
+  min-height: 44px; /* Touch target */
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+.btnPrimary:active {
+  transform: translateY(0);
+}
+
+.btnPrimary:focus-visible {
+  outline: 2px solid var(--primary-purple);
+  outline-offset: 2px;
+}
+
+.btnSecondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-8);
+  background: var(--bg-glass-light);
+  backdrop-filter: var(--glass-blur-light);
+  color: var(--text-primary);
+  border: var(--glass-border);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all var(--transition-base);
+  min-height: 44px; /* Touch target */
+}
+
+.btnSecondary:hover {
+  background: var(--bg-glass-medium);
+  border-color: rgba(147, 51, 234, 0.3);
+  transform: translateY(-2px);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+.btnSecondary:active {
+  transform: translateY(0);
+}
+
+.btnSecondary:focus-visible {
+  outline: 2px solid var(--primary-purple);
+  outline-offset: 2px;
+}
+
+/* ====================================
+   RESUME DROPDOWN
+   Dropdown για επιλογή GR/EN resume
+   ==================================== */
+
+.resumeDropdownContainer {
+  position: relative;
+  display: inline-block;
+  z-index: 200; /* Above all other Hero content */
+}
+
+.dropdownIcon {
+  transition: transform var(--transition-base);
+}
+
+/* Rotate icon when dropdown is open - controlled by state, not hover */
+.resumeDropdownContainer[aria-expanded="true"] .dropdownIcon,
+.btnSecondary[aria-expanded="true"] .dropdownIcon {
+  transform: rotate(180deg);
+}
+
+.resumeDropdown {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  left: 0;
+  right: 0;
+  min-width: 200px;
+  background: var(--bg-glass-medium);
+  backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--glass-shadow-hover);
+  overflow: hidden;
+  z-index: 2000; /* Very high to ensure visibility */
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  background: rgba(147, 51, 234, 0.05);
+}
+
+.dropdownItem:hover {
+  background: rgba(147, 51, 234, 0.15);
+  color: white;
+  padding-left: var(--space-5);
+}
+
+.dropdownItem:first-child {
+  border-bottom: 1px solid rgba(147, 51, 234, 0.2);
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  border-radius: var(--radius-full);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--bg-glass-light);
+  backdrop-filter: var(--glass-blur-light);
+  border: var(--glass-border);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all var(--transition-base);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.socialLink:hover {
+  background: var(--bg-glass-medium);
+  border-color: rgba(147, 51, 234, 0.3);
+  transform: translateY(-2px);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+.socialLink:active {
+  transform: scale(0.95);
+}
+
+.socialLink:focus-visible {
+  outline: 2px solid var(--primary-purple);
+  outline-offset: 2px;
+}
+
+.scroll:active {
+  transform: translateX(-50%) scale(0.95);
+}

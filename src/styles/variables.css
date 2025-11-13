@@ -1,0 +1,300 @@
+/* ==========================================
+   CSS CUSTOM PROPERTIES (Design Tokens)
+   ==========================================
+   
+   Ολοκληρωμένο Design System με:
+   - 4px-based spacing scale
+   - Responsive typography με clamp()
+   - Consistent icon sizes
+   - Mobile-optimized values
+   - WCAG AA accessible colors
+   
+   ========================================== */
+
+:root {
+  /* ====================================
+     ΧΡΩΜΑΤΑ (Colors)
+     ==================================== */
+  
+  /* Κύρια χρώματα brand (Primary Colors) */
+  --primary-purple: #9333ea;
+  --primary-blue: #3b82f6;
+  --secondary-purple: #8b5cf6;
+  --accent-violet: #7c3aed;
+  
+  /* Backgrounds - Dark Theme */
+  --bg-dark-overlay: rgba(15, 15, 35, 0.95);
+  --bg-dark-primary: #0f0f23;
+  --bg-dark-secondary: #1a1b3c;
+  --bg-dark-accent: #2d1b69;
+  
+  /* Glass Morphism Backgrounds */
+  --bg-glass-light: rgba(255, 255, 255, 0.08);
+  --bg-glass-medium: rgba(255, 255, 255, 0.12);
+  --bg-glass-dark: rgba(0, 0, 0, 0.2);
+  --bg-glass-strong: rgba(255, 255, 255, 0.15);
+  
+  /* Κείμενο - WCAG AA compliant (Text Colors) */
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.85);
+  --text-muted: rgba(255, 255, 255, 0.7);     /* Αυξημένο από 0.6 για accessibility */
+  --text-disabled: rgba(255, 255, 255, 0.5);  /* Αυξημένο από 0.4 */
+  
+  /* ====================================
+     GLASS MORPHISM EFFECTS
+     ==================================== */
+  
+  /* Blur Effects */
+  --glass-blur: blur(20px);
+  --glass-blur-medium: blur(12px);
+  --glass-blur-light: blur(8px);
+  --glass-blur-strong: blur(30px);
+  
+  /* Borders για glass cards */
+  --glass-border: 1px solid rgba(255, 255, 255, 0.18);
+  --glass-border-light: 1px solid rgba(255, 255, 255, 0.1);
+  --glass-border-medium: 1px solid rgba(255, 255, 255, 0.15);
+  --glass-border-strong: 1px solid rgba(255, 255, 255, 0.25);
+  --glass-border-hover: 1px solid rgba(255, 255, 255, 0.3);
+  
+  /* Σκιές για depth (Shadows) */
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --glass-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.16);
+  --glass-shadow-strong: 0 16px 48px rgba(0, 0, 0, 0.2);
+  
+  /* ====================================
+     GRADIENTS
+     ==================================== */
+  
+  --gradient-primary: linear-gradient(135deg, var(--primary-purple), var(--primary-blue));
+  --gradient-secondary: linear-gradient(45deg, var(--primary-purple), var(--primary-blue), var(--secondary-purple));
+  --gradient-text: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #dbeafe 100%);
+  --gradient-background: linear-gradient(135deg, #0f0f23 0%, #1a1b3c 25%, #2d1b69 50%, #1a1b3c 75%, #0f0f23 100%);
+  --gradient-overlay: linear-gradient(180deg, transparent 0%, rgba(15, 15, 35, 0.8) 100%);
+  
+  /* ====================================
+     EFFECTS & GLOWS
+     ==================================== */
+  
+  --glow-purple: 0 0 20px rgba(147, 51, 234, 0.3);
+  --glow-purple-strong: 0 0 30px rgba(147, 51, 234, 0.5);
+  --glow-blue: 0 0 20px rgba(59, 130, 246, 0.3);
+  --glow-white: 0 0 15px rgba(255, 255, 255, 0.2);
+  
+  /* ====================================
+     STATUS COLORS (Semantic)
+     ==================================== */
+  
+  /* Success - Green */
+  --color-success: #22c55e;
+  --color-success-rgb: 34, 197, 94;
+  --color-success-bg: rgba(34, 197, 94, 0.1);
+  --color-success-border: rgba(34, 197, 94, 0.25);
+  --color-success-hover: rgba(34, 197, 94, 0.2);
+  
+  /* Info - Blue */
+  --color-info: #3b82f6;
+  --color-info-rgb: 59, 130, 246;
+  --color-info-bg: rgba(59, 130, 246, 0.1);
+  --color-info-border: rgba(59, 130, 246, 0.25);
+  --color-info-hover: rgba(59, 130, 246, 0.2);
+  
+  /* Warning - Orange */
+  --color-warning: #f97316;
+  --color-warning-rgb: 249, 115, 22;
+  --color-warning-bg: rgba(249, 115, 22, 0.1);
+  --color-warning-border: rgba(249, 115, 22, 0.25);
+  --color-warning-hover: rgba(249, 115, 22, 0.2);
+  
+  /* Error - Red */
+  --color-error: #ef4444;
+  --color-error-rgb: 239, 68, 68;
+  --color-error-bg: rgba(239, 68, 68, 0.1);
+  --color-error-border: rgba(239, 68, 68, 0.25);
+  --color-error-hover: rgba(239, 68, 68, 0.2);
+  
+  /* ====================================
+     SPACING SCALE - 4px based
+     Σύστημα αποστάσεων βασισμένο στο 4px
+     ==================================== */
+  
+  --space-1: 0.25rem;   /* 4px - Micro spacing */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px - Base unit */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+  
+  /* Semantic Spacing - Για sections */
+  --space-section-y: clamp(4rem, 8vw, 8rem);     /* Vertical section padding */
+  --space-section-x: clamp(1rem, 3vw, 2rem);     /* Horizontal section padding */
+  --space-section-gap: clamp(2rem, 4vw, 4rem);   /* Gap between sections */
+  
+  /* Backward compatibility (διατηρούμε παλιά ονόματα) */
+  --space-xs: var(--space-2);
+  --space-sm: var(--space-4);
+  --space-md: var(--space-6);
+  --space-lg: var(--space-8);
+  --space-xl: var(--space-12);
+  --space-2xl: var(--space-16);
+  --space-3xl: var(--space-24);
+  
+  /* ====================================
+     BORDER RADIUS
+     ==================================== */
+  
+  --radius-none: 0;
+  --radius-sm: 0.375rem;   /* 6px */
+  --radius-base: 0.5rem;   /* 8px */
+  --radius-md: 0.75rem;    /* 12px */
+  --radius-lg: 1rem;       /* 16px */
+  --radius-xl: 1.25rem;    /* 20px */
+  --radius-2xl: 1.5rem;    /* 24px */
+  --radius-3xl: 2rem;      /* 32px */
+  --radius-full: 9999px;
+  
+  /* ====================================
+     TYPOGRAPHY - Responsive με clamp()
+     Αυτόματη προσαρμογή μεγέθους κειμένου
+     ==================================== */
+  
+  /* Font Sizes - Fluid Typography */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);       /* 12-14px */
+  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);         /* 14-16px */
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);       /* 16-18px */
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);         /* 18-24px */
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);        /* 20-28px */
+  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2.25rem);           /* 24-36px */
+  --text-3xl: clamp(2rem, 1.5rem + 2.5vw, 3rem);              /* 32-48px - Section titles */
+  --text-4xl: clamp(2.5rem, 2rem + 2.5vw, 4rem);              /* 40-64px - Hero title */
+  --text-5xl: clamp(3rem, 2.5rem + 2.5vw, 5rem);              /* 48-80px */
+  
+  /* Backward compatibility */
+  --font-size-xs: var(--text-xs);
+  --font-size-sm: var(--text-sm);
+  --font-size-base: var(--text-base);
+  --font-size-lg: var(--text-lg);
+  --font-size-xl: var(--text-xl);
+  --font-size-2xl: var(--text-2xl);
+  --font-size-3xl: var(--text-3xl);
+  --font-size-4xl: var(--text-4xl);
+  
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  
+  /* Line Heights */
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  
+  /* Letter Spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+  
+  /* ====================================
+     ICON SIZES
+     Ενιαίο σύστημα μεγεθών για icons
+     ==================================== */
+  
+  --icon-xs: 1rem;      /* 16px */
+  --icon-sm: 1.25rem;   /* 20px */
+  --icon-base: 1.5rem;  /* 24px */
+  --icon-md: 2rem;      /* 32px */
+  --icon-lg: 2.5rem;    /* 40px */
+  --icon-xl: 3rem;      /* 48px */
+  --icon-2xl: 4rem;     /* 64px */
+  --icon-3xl: 5rem;     /* 80px */
+  
+  /* ====================================
+     TRANSITIONS & ANIMATIONS
+     ==================================== */
+  
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-slower: 0.8s ease;
+  
+  /* Easing Functions */
+  --easing-linear: linear;
+  --easing-in: cubic-bezier(0.4, 0, 1, 1);
+  --easing-out: cubic-bezier(0, 0, 0.2, 1);
+  --easing-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --easing-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* Animation Durations */
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 500ms;
+  
+  /* ====================================
+     Z-INDEX SCALE
+     Σύστημα stacking context
+     ==================================== */
+  
+  --z-background: -1;
+  --z-base: 0;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-fixed: 30;
+  --z-overlay-backdrop: 40;
+  --z-overlay: 50;
+  --z-modal-backdrop: 60;
+  --z-modal: 70;
+  --z-popover: 80;
+  --z-tooltip: 90;
+  --z-notification: 100;
+  
+  /* Component-specific z-index */
+  --z-header: 100;
+  --z-nav-mobile: 110;
+  
+  /* ====================================
+     LAYOUT & CONTAINERS
+     ==================================== */
+  
+  /* Container Max Widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1200px;
+  --container-2xl: 1400px;
+  --container-max-width: var(--container-xl);
+  
+  /* Content Widths */
+  --content-narrow: 600px;
+  --content-base: 800px;
+  --content-wide: 1000px;
+  
+  /* ====================================
+     BREAKPOINTS (για documentation)
+     CSS δεν μπορεί να τα χρησιμοποιήσει
+     σε media queries - reference only
+     ==================================== */
+  
+  --breakpoint-xs: 480px;   /* Extra small devices */
+  --breakpoint-sm: 640px;   /* Small devices */
+  --breakpoint-md: 768px;   /* Tablets */
+  --breakpoint-lg: 1024px;  /* Desktop */
+  --breakpoint-xl: 1280px;  /* Large desktop */
+  --breakpoint-2xl: 1536px; /* Extra large */
+}

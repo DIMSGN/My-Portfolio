@@ -1,0 +1,18 @@
+/* ==========================================
+   GLASS SECTION - CSS MODULE
+   ==========================================
+   Wrapper component for sections with optional decorations
+   ========================================== */
+
+.glassSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+}

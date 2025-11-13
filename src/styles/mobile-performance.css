@@ -1,0 +1,143 @@
+/* ==========================================
+   MOBILE PERFORMANCE OPTIMIZATIONS
+   ==========================================
+   
+   Mobile-specific optimizations for slideshow layout:
+   - Removes expensive effects (backdrop-filter, shadows, gradients)
+   - Enables hardware acceleration for transforms
+   - Optimizes paint and composite layers
+   - Uses content-visibility for off-screen content
+   
+   ========================================== */
+
+@media (max-width: 768px) {
+  /* Reserve scrollbar space to avoid viewport width jitter */
+  html, body {
+    scrollbar-gutter: stable both-edges;
+  }
+  .slideshowWrapper,
+  .slideshowContainer,
+  .slide {
+    scrollbar-gutter: stable both-edges;
+  }
+  /* ===== DISABLE EXPENSIVE EFFECTS ===== */
+  
+  /* Disable backdrop-filter - very heavy for mobile GPUs */
+  *:not(.swipeIcon) {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  /* Simplify box-shadows - basic shadows only */
+  *:not(.dotInner) {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  /* Simplify borders - remove complex effects */
+  * {
+    border-image: none !important;
+  }
+  
+  /* Remove blur filters except for specific elements */
+  *:not(.swipeIcon) {
+    filter: none !important;
+  }
+  
+  /* ===== OPTIMIZE BACKGROUNDS ===== */
+  
+  /* Keep gradient but optimize attachment */
+  .app-background {
+    background-attachment: scroll !important;
+  }
+  
+  /* Solid backgrounds only for other elements */
+  *:not(.app):not(.app-background) {
+    background-blend-mode: normal !important;
+  }
+  
+  /* ===== SLIDESHOW OPTIMIZATIONS ===== */
+  
+  /* Hardware acceleration for slideshow transforms only */
+  .slideshowContainer,
+  .slide {
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+  
+  /* Don't hide off-screen slides - let slideshow handle visibility */
+  /* Removed: content-visibility auto was preventing slides from rendering */
+  
+  /* Reduce repaints - contain layout changes */
+  section {
+    contain: layout style;
+  }
+  
+  /* ===== DISABLE ANIMATIONS ON NON-CRITICAL ELEMENTS ===== */
+  
+  /* Don't interfere with slideshow container transforms */
+  /* Removed broad transform reset that was breaking slideshow */
+  
+  /* ===== TOUCH OPTIMIZATIONS ===== */
+  
+  /* Faster touch responses */
+  button,
+  a,
+  [role="button"] {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* ===== FONT RENDERING ===== */
+  
+  /* Optimize font rendering for mobile */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+  }
+}
+
+/* ===== EXTRA SMALL SCREENS ===== */
+@media (max-width: 480px) {
+  /* Remove all shadows for maximum performance */
+  *:not(.dotInner) {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  /* Disable all will-change to save memory */
+  *:not(.slideshowContainer) {
+    will-change: auto !important;
+  }
+  
+  /* Simplify swipe hint */
+  .swipeIcon {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}
+
+/* ===== REDUCED MOTION PREFERENCE ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== PAINT OPTIMIZATION ===== */
+@media (max-width: 768px) {
+  /* Reduce paint complexity */
+  * {
+    border-radius: min(var(--border-radius, 0.5rem), 1rem);
+  }
+  
+  /* Optimize image rendering */
+  img {
+    image-rendering: auto;
+    transform: translateZ(0);
+  }
+}

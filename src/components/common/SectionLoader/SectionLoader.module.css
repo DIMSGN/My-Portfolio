@@ -1,0 +1,67 @@
+/* ==========================================
+   SECTION LOADER STYLES - CSS MODULE
+   ==========================================
+   Using design tokens from variables.css
+   ========================================== */
+
+.sectionLoader {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.loaderContainer {
+  text-align: center;
+}
+
+.loaderSpinner {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--space-md);
+}
+
+.spinnerRing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top: 3px solid var(--primary-purple);
+  border-radius: var(--radius-full);
+  animation: spin 2s linear infinite;
+  will-change: transform;
+}
+
+.spinnerRing:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  left: 10px;
+  border-top-color: var(--primary-blue);
+  animation-duration: 1.5s;
+  animation-direction: reverse;
+}
+
+.spinnerRing:nth-child(3) {
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  left: 20px;
+  border-top-color: var(--secondary-purple);
+  animation-duration: 1s;
+}
+
+/* Spin animation is defined in base.css */
+
+.loaderMessage {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  margin: 0;
+  opacity: 0.8;
+}
+
+

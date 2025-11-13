@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Personal tech logo">
+  <defs>
+    <linearGradient id="gradPurple" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#6b1fff"/>
+      <stop offset="1" stop-color="#3b0b8a"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- background -->
+  <rect width="64" height="64" rx="12" ry="12" fill="url(#gradPurple)"/>
+
+  <!-- isometric hexagonal design -->
+  <g transform="translate(32,32) scale(1.1)">
+    <!-- outer hexagon -->
+    <path d="M0,-22 L18,-11 L18,11 L0,22 L-18,11 L-18,-11 Z"
+          fill="rgba(255,255,255,0.1)" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- middle hexagon -->
+    <path d="M0,-15 L13,-7.5 L13,7.5 L0,15 L-13,7.5 L-13,-7.5 Z"
+          fill="rgba(255,255,255,0.15)" stroke="#ffffff" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- inner hexagon -->
+    <path d="M0,-8 L7,-4 L7,4 L0,8 L-7,4 L-7,-4 Z"
+          fill="rgba(255,255,255,0.2)" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+
+    <!-- vertical connector lines for 3D depth -->
+    <line x1="-13" y1="7.5" x2="-16" y2="12" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    <line x1="13" y1="7.5" x2="16" y2="12" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    <line x1="0" y1="15" x2="0" y2="18" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

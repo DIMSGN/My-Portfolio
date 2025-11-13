@@ -1,0 +1,63 @@
+/* ==========================================
+   APP.CSS - Application Level Styles
+   ==========================================
+   
+   Contains styles specific to the main App component.
+   
+   Best Practices:
+   - Keep app-level layouts here
+   - Component-specific styles stay in components
+   - Use CSS variables from variables.css
+   - Optimize for performance
+   ========================================== */
+
+/* ====================================
+   APP BACKGROUND
+   ==================================== */
+
+.app,
+.app-background {
+  min-height: 100vh;
+  position: relative;
+  
+  /* Complex layered background */
+  background: 
+    linear-gradient(
+      135deg, 
+      var(--bg-dark-primary) 0%, 
+      var(--bg-dark-secondary) 25%, 
+      var(--bg-dark-accent) 50%, 
+      var(--bg-dark-secondary) 75%, 
+      var(--bg-dark-primary) 100%
+    ),
+    radial-gradient(
+      circle at 20% 30%, 
+      rgba(59, 130, 246, 0.05) 0%, 
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%, 
+      rgba(147, 51, 234, 0.05) 0%, 
+      transparent 50%
+    );
+  
+  /* Fixed attachment for parallax effect */
+  background-attachment: fixed;
+  
+  /* Performance optimization */
+  will-change: background-position;
+}
+
+/* ====================================
+   MAIN CONTENT WRAPPER
+   ==================================== */
+
+.main-content {
+  position: relative;
+  /* z-index removed - was creating stacking context that trapped Navigation */
+  
+  /* Performance optimization */
+  contain: layout;
+}
+
+
