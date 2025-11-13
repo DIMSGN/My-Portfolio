@@ -1,6 +1,6 @@
 
 import { FC, useState, useEffect } from 'react';
-import { Download, ChevronDown } from 'lucide-react';
+import { Download, ChevronDown, Sparkles } from 'lucide-react';
 import { SOCIAL_LINKS_CONFIG, PERSONAL_INFO, TECH_STACK, RESUME_FILES } from '@constants/index';
 import styles from './Hero.module.css';
 
@@ -43,9 +43,10 @@ const Hero: FC = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           {}
-          <div className={styles.badgeSuccess} role="status" aria-live="polite">
+          <div className={styles.availabilityBadge} role="status" aria-live="polite">
+            <Sparkles size={16} className={styles.sparkleIcon} aria-hidden="true" />
             <span className={styles.badgeDot} aria-hidden="true"></span>
-            <span>Actively seeking work opportunities</span>
+            <span className={styles.badgeText}>Available for Opportunities</span>
           </div>
 
           {}
