@@ -43,10 +43,7 @@ const Footer: FC = () => {
           {}
           <div className={styles.copyright}>
             <p className={styles.copyrightText}>
-              <span>© {currentYear} {PERSONAL_INFO.name}.</span>
-              <span className={styles.builtWith}>
-                Built with <Heart size={14} className={styles.heartIcon} aria-hidden="true" /> using React & CSS
-              </span>
+              © {currentYear} {PERSONAL_INFO.name}. Built with <Heart size={14} className={styles.heartIcon} aria-hidden="true" /> using React & CSS
             </p>
           </div>
 
