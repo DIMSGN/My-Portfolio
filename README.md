@@ -1,179 +1,120 @@
-# Dimitris Siganos - Portfolio
+# Dimitris Siganos – Portfolio
 
-![React](https://img.shields.io/badge/React-19.1.1-61dafb?logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178c6?logo=typescript)
-![Vite](https://img.shields.io/badge/Vite-7.1.2-646cff?logo=vite)
-![License](https://img.shields.io/badge/License-MIT-green)
+> Modern React + TypeScript portfolio showcasing full‑stack skills, performance optimization discipline, and clean component architecture.
 
-A modern, responsive portfolio website showcasing full-stack development projects and skills. Built with React 19, TypeScript, and Vite, featuring accessibility-first design, lazy loading, and glassmorphism UI.
+[![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-4078c0?logo=github)](https://dimsgn.github.io/My-Portfolio/) [![React](https://img.shields.io/badge/React-19-61dafb?logo=react)](#tech-stack) [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript)](#tech-stack) [![Build Tool](https://img.shields.io/badge/Vite-7.1-646cff?logo=vite)](#tech-stack)
 
-## 🚀 Live Demo
+## Overview
+A fast, accessible, mobile‑first single page application built with React 19, Vite, and TypeScript strict mode. Designed to highlight projects, experience, and core engineering philosophy with attention to performance (reduced bundle size, optimized animations, compositing) and UX polish.
 
-**[View Live Portfolio](https://dimsgn.github.io/My-Portfolio/)**
+## Live Demo
+- Production: https://dimsgn.github.io/My-Portfolio/
+- Branch: `main` (auto‑deployed via GitHub Actions)
 
-## ✨ Features
+## Sections
+| Section | Purpose |
+|---------|---------|
+| Hero | Identity, availability badge, quick intro |
+| About | Background, values, location |
+| Skills | Categorized technical competencies with responsive grid |
+| Experience | Timeline of roles / work history |
+| Projects | Selected portfolio work with links |
+| Contact | Direct call‑to‑action & social links |
 
-- **Modern React Architecture**: Functional components with hooks, lazy loading, and Suspense boundaries
-- **TypeScript Strict Mode**: Full type safety with zero `any` types
-- **Responsive Design**: Mobile-first approach with smooth scroll-snap navigation
-- **Accessibility (WCAG AAA)**: Semantic HTML, ARIA labels, keyboard navigation, screen reader support
-- **Performance Optimized**: Code splitting, lazy loading, optimized bundle size (68KB gzipped)
-- **Design System**: Comprehensive CSS design tokens for colors, spacing, typography, and animations
-- **Error Boundaries**: Graceful error handling with user-friendly fallback UI
-- **Glass Morphism UI**: Modern glassmorphism design with floating elements and smooth animations
+## Key Features
+- Reactive navigation highlighting via IntersectionObserver
+- Mobile menu with scroll locking (requestAnimationFrame deferred writes)
+- Strict TypeScript (no implicit any, improved maintainability)
+- Error boundaries for resilience (`react-error-boundary`)
+- Design tokens + CSS modules for scoped styling
+- Responsive layout with fluid typography (`clamp()` usage)
+- Animated availability badge (GPU‑safe transforms)
+- Glassmorphism aesthetic with performance‑aware effects
 
-## 🛠️ Tech Stack
+## Tech Stack
+- Framework: React 19 / JSX / Hooks
+- Language: TypeScript 5.9 (strict)
+- Bundler: Vite 7 (esbuild + manual chunk splitting)
+- Icons: `lucide-react` (code‑split vendor chunk)
+- Styles: CSS Modules + design tokens + utility layers
+- Linting: ESLint (TypeScript + a11y + hooks rules)
 
-### Frontend
-- **React 19.1.1** - Latest React with modern hooks and patterns
-- **TypeScript 5.9.3** - Strict type checking enabled
-- **Vite 7.1.2** - Fast build tool and development server
-- **CSS Modules** - Scoped component styling
-- **Lucide React** - Beautiful icon system
+## Performance Optimizations
+| Optimization | Impact |
+|--------------|--------|
+| Manual chunk splitting (`react-vendor`, `icons`) | Smaller initial JS payload |
+| Removed unused CSS & comments | Reduced parsing + bundle size |
+| GPU‑composited animations (`translate3d`, `will-change`) | Lower main thread animation cost |
+| Replaced expensive `box-shadow` animation with opacity | Reduced paint complexity |
+| Deferred scroll lock writes via rAF | Improved INP responsiveness |
+| Eliminated `transition: all` in hotspots | More predictable rendering |
+| Reduced animated element density | Lower style & layout cost |
 
-### Development Tools
-- **ESLint** - Code quality and consistency
-- **React Error Boundary** - Production-grade error handling
-- **Path Aliases** - Clean imports with `@` prefixes
+## Accessibility
+- Semantic headings & landmark structure
+- ARIA labels where appropriate
+- High‑contrast text gradients and legible sizes
+- Focus on avoiding layout shift, predictable motion
 
-### Architecture Highlights
-- Custom hooks for state management (`useNavigation`, `useMediaQuery`, `useScrollLock`)
-- Intersection Observer for scroll-based active section detection
-- Centralized constants and configuration
-- Feature-based modular folder structure
+## Project Structure (Excerpt)
+```
+src/
+  components/
+    layout/Navigation/...
+    sections/{Hero,About,Skills,Experience,Projects,Contact}/
+    common/{GlassSection,FloatingElements,SkeletonLoader,ErrorBoundary}/
+  hooks/{useBreakpoint,useScrollLock,useEscapeKey,useMobileMenu}
+  config/{constants,floatingAnimations}
+  styles/{design-tokens,variables,components,utilities}
+  constants/{sections,skills,projects,experience}
+```
 
-## 📦 Installation
-
-### Prerequisites
-- Node.js 18+ 
-- npm
-
-### Setup
-
-1. **Clone the repository**
+## Getting Started
 ```bash
+# Clone
 git clone https://github.com/DIMSGN/My-Portfolio.git
 cd My-Portfolio
-```
 
-2. **Install dependencies**
-```bash
+# Install dependencies
 npm install
-```
 
-3. **Start development server**
-```bash
+# Start dev server
 npm run dev
-```
 
-The application will open at `http://localhost:3000/My-Portfolio/`
+# Lint
+npm run lint
 
-## 🚀 Build & Deployment
-
-### Build for Production
-```bash
+# Build production
 npm run build
-```
 
-Build output will be in the `dist/` directory.
-
-### Preview Production Build
-```bash
+# Preview build locally
 npm run preview
 ```
 
-### Lint Code
-```bash
-npm run lint
-```
+## Scripts
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Production build (Vite) |
+| `npm run preview` | Preview built site locally |
+| `npm run lint` | Run ESLint across codebase |
 
-### Deploy to GitHub Pages
-This project is configured for GitHub Pages deployment. Push to the `main` branch to trigger automatic deployment via GitHub Actions (if configured), or manually deploy the `dist/` folder.
+## Deployment
+- Automated via GitHub Actions to GitHub Pages (`homepage` field set)
+- SPA redirect handling included in `index.html`
 
-## 📁 Project Structure
+## Contributing
+This portfolio reflects personal work; feature suggestions via Issues are welcome, but large PRs should be discussed first.
 
-```
-src/
-├── components/
-│   ├── common/          # Reusable UI components
-│   │   ├── ErrorBoundary/
-│   │   ├── FloatingElements/
-│   │   ├── GlassSection/
-│   │   └── SkeletonLoader/
-│   ├── layout/          # Layout components
-│   │   ├── Footer/
-│   │   └── Navigation/
-│   │       ├── components/
-│   │       ├── hooks/
-│   │       └── utils/
-│   └── sections/        # Page sections
-│       ├── About/
-│       ├── Contact/
-│       ├── Experience/
-│       ├── Hero/
-│       ├── Projects/
-│       └── Skills/
-├── config/              # Application configuration
-├── constants/           # Static data and constants
-├── hooks/               # Custom React hooks
-├── styles/              # Global styles and design tokens
-├── types/               # TypeScript type definitions
-├── utils/               # Utility functions
-├── App.tsx              # Root component
-└── main.tsx             # Application entry point
-```
+## Roadmap / Potential Enhancements
+- Add unit tests (Vitest + React Testing Library)
+- Image optimization (next‑gen formats, lazy placeholders)
+- Service worker for offline caching
+- More granular code splitting per section
+- Lighthouse CI integration in workflow
 
-## 🎨 Design System
-
-The project uses a comprehensive design token system defined in `design-tokens.css`:
-
-- **Colors**: Brand colors, semantic colors, glass effects
-- **Typography**: Fluid type scale with `clamp()`
-- **Spacing**: Consistent spacing rhythm (4px base)
-- **Shadows**: Depth hierarchy with layered shadows
-- **Breakpoints**: Mobile-first responsive (480px, 768px, 1024px, 1440px, 1920px)
-- **Animations**: Smooth transitions and micro-interactions
-
-## 🔑 Key Components
-
-### Custom Hooks
-- `useNavigation` - Scroll-based navigation with Intersection Observer
-- `useMediaQuery` - Responsive breakpoint detection
-- `useScrollLock` - Body scroll prevention for modals
-- `useEscapeKey` - ESC key handler for dismissible UI
-- `useMobileMenu` - Mobile menu state management
-
-### Lazy Loaded Sections
-All sections (About, Skills, Projects, Experience, Contact) are lazy loaded with Suspense boundaries for optimal performance.
-
-### Error Handling
-Production-ready error boundaries with development/production mode distinction and user-friendly fallback UI.
-
-## 🌐 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## 📧 Contact
-
-**Dimitris Siganos**
-- Email: siganos.dimitrios@gmail.com
-- GitHub: [@DIMSGN](https://github.com/DIMSGN)
-- LinkedIn: [Dimitris Siganos](https://linkedin.com/in/dimitris-siganos-20ab3316a)
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🙏 Acknowledgments
-
-- Icons by [Lucide](https://lucide.dev/)
-- Built with [Vite](https://vitejs.dev/)
-- Hosted on [GitHub Pages](https://pages.github.com/)
+## License
+No explicit open source license at present. All rights reserved. Contact for reuse permissions.
 
 ---
-
-**Built with ❤️ by Dimitris Siganos**
-# My-Portfolio
+Feel free to explore the code and reach out for collaboration or opportunities.
