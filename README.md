@@ -1,6 +1,6 @@
 # Dimitris Siganos – Portfolio
 
-> Modern React + TypeScript portfolio showcasing full‑stack skills, performance optimization discipline, and clean component architecture.
+> React + TypeScript portfolio showcasing full‑stack skills, performance optimization discipline, and clean component architecture.
 
 [![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-4078c0?logo=github)](https://dimsgn.github.io/My-Portfolio/) [![React](https://img.shields.io/badge/React-19-61dafb?logo=react)](#tech-stack) [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?logo=typescript)](#tech-stack) [![Build Tool](https://img.shields.io/badge/Vite-7.1-646cff?logo=vite)](#tech-stack)
 

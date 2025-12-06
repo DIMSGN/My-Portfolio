@@ -1,3 +1,17 @@
+/**
+ * NAVIGATION COMPONENT
+ * 
+ * Main navigation bar with desktop and mobile views
+ * 
+ * Architecture:
+ * - Modular structure with separate components and hooks
+ * - Intersection Observer for active section detection
+ * - WCAG AAA accessibility compliance
+ * - Mobile-first responsive design
+ * 
+ * @author Dimitris Siganos
+ * @version 2.0.0
+ */
 
 import { FC } from 'react';
 import { Logo } from './components/Logo';
@@ -6,6 +20,7 @@ import { HamburgerButton } from './components/HamburgerButton';
 import styles from './Navigation.module.css';
 
 interface NavigationProps {
+  isMobile: boolean;
   isMobileMenuOpen: boolean;
   toggleMobileMenu: () => void;
   activeSection: string;
@@ -13,7 +28,7 @@ interface NavigationProps {
   handleNavClick: (href: string, id: string) => void;
 }
 
-const Navigation: FC<NavigationProps> = ({ isMobileMenuOpen, toggleMobileMenu, activeSection, isScrolled, handleNavClick }) => {
+const Navigation: FC<NavigationProps> = ({ isMobile, isMobileMenuOpen, toggleMobileMenu, activeSection, isScrolled, handleNavClick }) => {
   return (
     <header
       className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}
@@ -26,10 +41,12 @@ const Navigation: FC<NavigationProps> = ({ isMobileMenuOpen, toggleMobileMenu, a
             activeSection={activeSection} 
             onNavClick={handleNavClick} 
           />
-          <HamburgerButton 
-            isOpen={isMobileMenuOpen} 
-            onClick={toggleMobileMenu} 
-          />
+          {isMobile && (
+            <HamburgerButton 
+              isOpen={isMobileMenuOpen} 
+              onClick={toggleMobileMenu} 
+            />
+          )}
         </div>
       </nav>
     </header>

@@ -25,13 +25,17 @@ const About: FC = () => {
             </div>
 
             <div className={styles.personalInfo}>
+              <h3 className={styles.personalName}>{PERSONAL_INFO.name}</h3>
               <p className={styles.personalDescription}>
-                Hey! I'm a developer who loves creating things that work well and look good.
-                I'm currently studying at AUEB Coding Factory and spending most of my time
-                building projects to learn new concepts. What I enjoy most is that moment
-                when something finally clicks and starts working. I try to write clean code
-                and actually understand what I'm doing instead of just copying solutions.
-                Always learning something new!
+                I'm a full stack developer based in Athens, coming into tech
+                after several years in other industries. Currently studying at
+                the AUEB Coding Factory and strengthening my skills through
+                consistent self-study, I focus on React, Angular, and building
+                clean, scalable applications. I enjoy understanding how systems
+                work end-to-end and expanding my knowledge step by step, without
+                shortcuts. My goal right now is simple: learn deeply, improve
+                steadily, and become a strong contributor in real-world software
+                teams.
               </p>
 
               <div className={styles.techStack}>

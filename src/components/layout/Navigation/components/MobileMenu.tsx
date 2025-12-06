@@ -1,8 +1,14 @@
+/**
+ * Mobile Menu Component
+ */
 
 import { FC, useEffect, useCallback } from 'react';
+import { Sparkles } from 'lucide-react';
 import { NAV_ITEMS } from '@constants/index';
-import { NAVIGATION_TIMING } from '@config/constants';
 import styles from '../Navigation.module.css';
+
+const MENU_CLOSE_DELAY = 300;
+const NAV_DELAY = 100;
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -17,19 +23,14 @@ export const MobileMenu: FC<MobileMenuProps> = ({
   onNavClick,
   onClose,
 }) => {
-
+  // Click outside to close
   useEffect(() => {
-    // When closing, restore focus to hamburger button for accessibility
-    if (!isOpen) {
-      const btn = document.querySelector('[aria-controls="mobile-menu"]') as HTMLButtonElement | null;
-      btn?.focus();
-      return;
-    }
+    if (!isOpen) return;
 
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (target.classList.contains(styles.mobileMenu)) {
-        onClose(true);
+        onClose(true); // Restore scroll when clicking outside
       }
     };
 
@@ -42,13 +43,13 @@ export const MobileMenu: FC<MobileMenuProps> = ({
       e.preventDefault();
       e.stopPropagation();
       
-
+      // Close menu WITHOUT restoring scroll
       onClose(false);
       
-
+      // Wait for menu close animation and body unlock
       setTimeout(() => {
         onNavClick(href, id);
-      }, NAVIGATION_TIMING.MENU_CLOSE_DELAY);
+      }, MENU_CLOSE_DELAY);
     },
     [onNavClick, onClose]
   );
@@ -59,13 +60,13 @@ export const MobileMenu: FC<MobileMenuProps> = ({
         e.preventDefault();
         e.stopPropagation();
         
-
+        // Close menu WITHOUT restoring scroll
         onClose(false);
         
-
+        // Then navigate after a small delay to allow body unlock
         setTimeout(() => {
           onNavClick(href, id);
-        }, NAVIGATION_TIMING.NAV_DELAY);
+        }, NAV_DELAY);
       }
     },
     [onNavClick, onClose]
@@ -98,6 +99,26 @@ export const MobileMenu: FC<MobileMenuProps> = ({
             {item.label}
           </a>
         ))}
+
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            
+            // Close menu WITHOUT restoring scroll
+            onClose(false);
+            
+            // Then navigate after a small delay to allow body unlock
+            setTimeout(() => {
+              onNavClick('#contact', 'contact');
+            }, NAV_DELAY);
+          }}
+          className={styles.mobileCtaButton}
+          aria-label="Navigate to contact section"
+          tabIndex={isOpen ? 0 : -1}
+        >
+          <Sparkles size={18} aria-hidden="true" />
+          <span>Let's Talk</span>
+        </button>
       </div>
     </div>
   );
