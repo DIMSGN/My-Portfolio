@@ -61,11 +61,6 @@ const App: FC = () => {
   return (
     <ErrorBoundary>
       <div className={`app-background ${isMobile ? 'mobile-scroll-snap' : ''}`}>
-        {/* Skip to main content link for accessibility */}
-        <a href="#main-content" className="skip-to-content sr-only">
-          Skip to main content
-        </a>
-
         {/* Global floating elements - Background decoration */}
         {!isMobile && <FloatingElements variant="default" density="dense" />}
 
