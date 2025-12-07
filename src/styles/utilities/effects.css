@@ -1,9 +1,0 @@
-
-.gpu-accelerated {
-  will-change: transform;
-  transform: translateZ(0);
-}
-.performance-optimized {
-  contain: layout style paint;
-  transform: translateZ(0);
-}
